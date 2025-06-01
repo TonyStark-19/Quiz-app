@@ -450,7 +450,7 @@ export const quizData = {
     ],
 
     // react js
-    reactjs: [
+    react: [
         {
             question: "What is the purpose of the `useState` hook in React?",
             options: [
@@ -697,7 +697,7 @@ export const quizData = {
     ],
 
     // git & github
-    gitgithub: [
+    git: [
         {
             question: "What does Git primarily help with?",
             options: [

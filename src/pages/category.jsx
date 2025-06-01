@@ -1,6 +1,9 @@
 // import Navbar
 import { Navbar } from "./home";
 
+// import use navigate
+import { useNavigate } from "react-router-dom";
+
 // category page
 export default function CategoryPage() {
     return (
@@ -19,7 +22,7 @@ const array = [
         info: "10 Questions | Beginner friendly"
     },
     {
-        title: "C++",
+        title: "Cpp",
         description: "Test your knowledge of object-oriented programming, STL, and advanced logic-building techniques",
         info: "12 Questions | Intermediate Level"
     },
@@ -67,6 +70,7 @@ const array = [
 
 // category page content
 function CategoryContent() {
+    const navigate = useNavigate();
     return (
         <div className="content flex-col gap-6 pt-28 w-full h-full
          bg-orange-100 dark:bg-gray-950  text-stone-800 dark:text-white">
@@ -79,8 +83,12 @@ function CategoryContent() {
                         <h2 className="text-2xl font-semibold">{arr.title}</h2>
                         <h4 className="mt-2">{arr.description}</h4>
                         <p className="mt-2">{arr.info}</p>
-                        <button className="rounded-md p-1 mt-3
-                         bg-stone-700 dark:bg-gray-800 text-orange-50 dark:text-white">Start Quiz</button>
+                        <button
+                            className="rounded-md p-1 mt-3 bg-stone-700 dark:bg-gray-800 text-orange-50 dark:text-white"
+                            onClick={() => navigate(`/quiz/${arr.title.split(" ")[0].toLowerCase()}`)}
+                        >
+                            Start Quiz
+                        </button>
                     </div>
                 ))}
             </div>
