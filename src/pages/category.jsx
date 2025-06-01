@@ -69,7 +69,7 @@ const array = [
 function CategoryContent() {
     return (
         <div className="content flex-col gap-6 pt-28 w-full h-full
-         bg-orange-50 dark:bg-gray-950  text-stone-800 dark:text-white">
+         bg-orange-100 dark:bg-gray-950  text-stone-800 dark:text-white">
             <h1 className="text-6xl font-bold text-center">Choose Quiz Category</h1>
 
             <div className="box-wrap pb-10 flex-wrap pt-14 flex justify-center flex-row gap-4">
@@ -80,7 +80,7 @@ function CategoryContent() {
                         <h4 className="mt-2">{arr.description}</h4>
                         <p className="mt-2">{arr.info}</p>
                         <button className="rounded-md p-1 mt-3
-                         bg-stone-600 dark:bg-gray-700 text-orange-50 dark:text-white">Start Quiz</button>
+                         bg-stone-700 dark:bg-gray-800 text-orange-50 dark:text-white">Start Quiz</button>
                     </div>
                 ))}
             </div>
