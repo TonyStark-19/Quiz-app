@@ -27,22 +27,23 @@ export default function QuizPage() {
         });
     }, []);
 
+    const [showResult, setShowResult] = useState(false);
+
     return (
-        <div className="container min-h-screen">
-            <Navbar />
-            <Quiz />
+        <div className="min-h-screen">
+            <Navbar disableNav={!showResult} />
+            <Quiz showResult={showResult} setShowResult={setShowResult} />
         </div>
     )
 }
 
 // quiz
-function Quiz() {
+function Quiz({ showResult, setShowResult }) {
     const { category } = useParams();
     const questions = quizData[category];
     const [current, setCurrent] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
     const [score, setScore] = useState(0);
-    const [showResult, setShowResult] = useState(false);
 
     // if category is incorrect
     if (!questions) {
@@ -71,38 +72,44 @@ function Quiz() {
     // to show result
     if (showResult) {
         return (
-            <div className="quiz-page text-center flex justify-center items-center flex-col min-h-screen 
+            <div className="quiz-page text-center flex justify-center items-center min-h-screen 
              bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
-                <h1 className="text-5xl font-bold capitalize mb-6" data-aos="fade-down">{category} Quiz</h1>
+                <div className='flex justify-center items-center flex-col max-w-lg w-full px-5'>
+                    <h1 className="font-bold capitalize
+                    c:text-5xl c:mb-6 d:text-4xl d:mb-4" data-aos="fade-down">{category} Quiz</h1>
 
-                <p className="text-2xl" data-aos="fade-up">🎉 Quiz Completed!</p>
-                <p className="text-xl mt-4" data-aos="fade-up" data-aos-delay="200">
-                    Your Score: <span className="font-semibold text-orange-400">{score}</span> / {questions.length}
-                </p>
+                    <p className="c:text-2xl d:text-xl" data-aos="fade-up">🎉 Quiz Completed!</p>
+                    <p className="text-xl c:mt-4 d:mt-3" data-aos="fade-up" data-aos-delay="200">
+                        Your Score: <span className="font-semibold text-orange-400">{score}</span> / {questions.length}
+                    </p>
 
-                <p className="mt-6 text-xl text-stone-800 dark:text-white" data-aos="fade-in" data-aos-delay="400">
-                    {score === questions.length
-                        ? "Excellent! You nailed it! 🏆"
-                        : score >= questions.length / 2
-                            ? "Great effort! Keep practicing. 💪"
-                            : "Don't worry! Try again to improve your score. 🚀"}
-                </p>
+                    <p className="text-xl text-stone-800 dark:text-white
+                c:max-w-lg c:w-full c:mt-6 d:mt-4 d:max-w-sm" data-aos="fade-in" data-aos-delay="400">
+                        {score === questions.length
+                            ? "Excellent! You nailed it! 🏆"
+                            : score >= questions.length / 2
+                                ? "Great effort! Keep practicing. 💪"
+                                : "Don't worry! Try again to improve your score. 🚀"}
+                    </p>
 
-                <div className="mt-8 flex gap-4" data-aos="zoom-in" data-aos-delay="600">
-                    <button
-                        onClick={() => window.location.reload()}
-                        className="px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-md"
-                    >
-                        Retry Quiz
-                    </button>
-
-                    <Link to="/pages/category">
+                    <div className="mt-8 flex gap-4" data-aos="zoom-in" data-aos-delay="600">
                         <button
-                            className="px-6 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-md"
+                            onClick={() => window.location.reload()}
+                            className="bg-orange-600 hover:bg-orange-700 text-white rounded-md
+                            c:px-6 c:py-2 d:px-3 d:py-2"
                         >
-                            Take more quiz
+                            Retry Quiz
                         </button>
-                    </Link>
+
+                        <Link to="/pages/category">
+                            <button
+                                className="bg-gray-700 hover:bg-gray-600 text-white rounded-md
+                                c:px-6 c:py-2 d:px-3 d:py-2"
+                            >
+                                Take more quiz
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         );
@@ -113,19 +120,23 @@ function Quiz() {
     const currentQuestion = questions[current];
 
     return (
-        <div className="quiz-page pt-32 flex items-center flex-col h-screen
+        <div className="quiz-page pt-32 px-5 flex items-center flex-col min-h-screen
            bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
-            <h1 data-aos="fade-down" className="text-5xl font-bold capitalize mb-10">{category} Quiz</h1>
-            <div data-aos="fade-up" className="border border-stone-700 dark:border-white py-6 px-7 rounded-lg w-full max-w-xl">
-                <p className="text-2xl mb-4 font-semibold">
+            <h1 data-aos="fade-down" className="font-bold capitalize
+            c:text-5xl c:mb-10 d:text-4xl d:mb-6">{category} Quiz</h1>
+            <div data-aos="fade-up" className="border border-stone-700 dark:border-white rounded-lg
+            a:w-full a:max-w-xl a:py-4 a:px-5 d:py-4 d:px-5">
+                <p className="mb-4 font-semibold
+                b:text-2xl d:text-xl">
                     {current + 1}. {currentQuestion.question}
                 </p>
 
                 {currentQuestion.options.map((opt, i) => (
                     <div key={i} className="tracking-wide mb-3">
-                        <label className="cursor-pointer text-xl p-3 pl-5 rounded-md 
+                        <label className="cursor-pointer text-xl rounded-md 
                         bg-stone-700/95 dark:bg-gray-800 block text-orange-100 dark:text-white
-                        dark:hover:bg-gray-800/70 hover:bg-stone-800/90">
+                        dark:hover:bg-gray-800/70 hover:bg-stone-800/90
+                        c:p-3 c:pl-5 d:p-2 d:pl-4">
                             <input
                                 type="radio"
                                 name={`q${current}`}

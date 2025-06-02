@@ -22,7 +22,7 @@ export default function CategoryPage() {
     }, []);
 
     return (
-        <div className="container min-h-screen">
+        <div className="min-h-screen">
             <Navbar />
             <CategoryContent />
         </div>
@@ -90,9 +90,11 @@ function CategoryContent() {
     return (
         <div className="content flex-col gap-6 pt-28 w-full h-full
          bg-orange-100 dark:bg-gray-950  text-stone-800 dark:text-white">
-            <h1 data-aos="fade-down" className="text-6xl font-bold text-center">Choose Quiz Category</h1>
+            <h1 data-aos="fade-down" className="font-bold text-center
+            a:text-6xl b:text-5xl d:text-4xl">Choose Quiz Category</h1>
 
-            <div className="box-wrap pb-10 flex-wrap pt-14 flex justify-center flex-row gap-4">
+            <div className="box-wrap pb-10 px-5 flex-wrap flex justify-center flex-row gap-4
+            a:pt-14 b:pt-10 d:pt-8">
                 {array.map((arr, idx) => (
                     <div className="flex flex-col justify-center box w-96 border-2 py-4 px-5 rounded-lg
                    border-stone-600 dark:border-gray-500 text-stone-800 dark:text-white" key={idx} data-aos="fade-up">

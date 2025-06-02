@@ -19,7 +19,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="container h-screen">
+        <div className="h-screen w-screen">
             <Navbar />
             <Content />
         </div>
@@ -27,7 +27,7 @@ export default function Home() {
 }
 
 // navbar
-export function Navbar() {
+export function Navbar({ disableNav }) {
 
     const [isDark, setIsDark] = useState(() => {
         // initialize from localStorage
@@ -51,9 +51,13 @@ export function Navbar() {
     return (
         <div className="navbar flex justify-between flex-row p-4 fixed z-10 w-full border-b-2 
         border-stone-800 dark:border-white bg-orange-100 dark:bg-gray-950">
-            <Link to="/">
-                <div className="head text-2xl font-bold text-stone-800 dark:text-white">Quiz App</div>
-            </Link>
+            <div className="head text-2xl font-bold text-stone-800 dark:text-white">
+                {disableNav ? (
+                    <span className="cursor-not-allowed opacity-50">Quiz App</span>
+                ) : (
+                    <Link to="/">Quiz App</Link>
+                )}
+            </div>
             <button
                 onClick={toggleTheme}
                 className="px-3 py-1 rounded-md
@@ -72,9 +76,12 @@ function Content() {
         <div className="content z-1 flex justify-center items-center pt-10 w-full h-full
          bg-orange-100 dark:bg-gray-950  text-stone-800 dark:text-white">
             <div className='flex justify-center items-center flex-col gap-5' data-aos="fade-down">
-                <h1 className="text-7xl font-bold text-center">Quiz App!</h1>
-                <h2 className="text-4xl text-center font-semibold">Test Your Knowledge. Learn Something New.</h2>
-                <p className="text-center text-xl max-w-xl">
+                <h1 className="font-bold text-center
+                a:text-7xl b:text-6xl c:text-5xl d:text-4xl">Quiz App!</h1>
+                <h2 className="text-4xl text-center font-semibold
+                a:max-w-2xl c:text-3xl c:max-w-lg d:text-2xl d:max-w-96">Test Your Knowledge. Learn Something New.</h2>
+                <p className="text-center text-xl
+                b:max-w-xl b:w-full c:max-w-lg c:w-full c:tracking-wide d:tracking-normal d:w-80">
                     Welcome to the ultimate quiz experience powered by React and Tailwind CSS. Whether you're brushing up on skills or just having fun, this app helps you learn, compete, and grow.
                 </p>
                 <Link to="/pages/category">
