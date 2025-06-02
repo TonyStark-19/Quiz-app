@@ -4,8 +4,23 @@ import { Navbar } from "./home";
 // import use navigate
 import { useNavigate } from "react-router-dom";
 
+// AOS animations
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+// import use effect
+import { useEffect } from 'react';
+
 // category page
 export default function CategoryPage() {
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    }, []);
+
     return (
         <div className="container min-h-screen">
             <Navbar />
@@ -71,20 +86,22 @@ const array = [
 // category page content
 function CategoryContent() {
     const navigate = useNavigate();
+
     return (
         <div className="content flex-col gap-6 pt-28 w-full h-full
          bg-orange-100 dark:bg-gray-950  text-stone-800 dark:text-white">
-            <h1 className="text-6xl font-bold text-center">Choose Quiz Category</h1>
+            <h1 data-aos="fade-down" className="text-6xl font-bold text-center">Choose Quiz Category</h1>
 
             <div className="box-wrap pb-10 flex-wrap pt-14 flex justify-center flex-row gap-4">
                 {array.map((arr, idx) => (
-                    <div className="flex flex-col justify-center box w-96 border-2 p-4 rounded-md
-                   border-stone-600 dark:border-gray-500 text-stone-800 dark:text-white" key={idx}>
-                        <h2 className="text-2xl font-semibold">{arr.title}</h2>
+                    <div className="flex flex-col justify-center box w-96 border-2 py-4 px-5 rounded-lg
+                   border-stone-600 dark:border-gray-500 text-stone-800 dark:text-white" key={idx} data-aos="fade-up">
+                        <h2 className="text-2xl font-bold">{arr.title}</h2>
                         <h4 className="mt-2">{arr.description}</h4>
                         <p className="mt-2">{arr.info}</p>
                         <button
-                            className="rounded-md p-1 mt-3 bg-stone-700 dark:bg-gray-800 text-orange-50 dark:text-white"
+                            className="rounded-md p-1 mt-3
+                             bg-stone-700 dark:bg-gray-800 hover:bg-stone-600 dark:hover:bg-gray-900 text-orange-50 dark:text-white"
                             onClick={() => navigate(`/quiz/${arr.title.split(" ")[0].toLowerCase()}`)}
                         >
                             Start Quiz

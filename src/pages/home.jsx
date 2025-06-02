@@ -4,8 +4,20 @@ import { useEffect, useState } from 'react';
 // router
 import { Link } from 'react-router-dom';
 
+// AOS animations
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 // home page
 export default function Home() {
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    }, []);
+
     return (
         <div className="container h-screen">
             <Navbar />
@@ -37,7 +49,7 @@ export function Navbar() {
     };
 
     return (
-        <div className="navbar flex justify-between flex-row p-4 fixed z-3 w-full border-b-2 
+        <div className="navbar flex justify-between flex-row p-4 fixed z-10 w-full border-b-2 
         border-stone-800 dark:border-white bg-orange-100 dark:bg-gray-950">
             <Link to="/">
                 <div className="head text-2xl font-bold text-stone-800 dark:text-white">Quiz App</div>
@@ -45,7 +57,8 @@ export function Navbar() {
             <button
                 onClick={toggleTheme}
                 className="px-3 py-1 rounded-md
-                text-stone-800 dark:text-white border border-stone-600 dark:border-gray-800 hover:bg-stone-600 hover:text-white dark:hover:bg-gray-800 transition"
+                text-stone-800 dark:text-white border border-stone-600 dark:border-gray-800
+                 hover:bg-stone-600 hover:text-white dark:hover:bg-gray-800 transition"
             >
                 {isDark ? '🌞 Light' : '🌙 Dark'}
             </button>
@@ -56,18 +69,21 @@ export function Navbar() {
 // content
 function Content() {
     return (
-        <div className="content flex justify-center items-center flex-col gap-6 pt-10 w-full h-full
+        <div className="content z-1 flex justify-center items-center pt-10 w-full h-full
          bg-orange-100 dark:bg-gray-950  text-stone-800 dark:text-white">
-            <h1 className="text-7xl font-bold text-center">Quiz App!</h1>
-            <h2 className="text-4xl text-center font-semibold">Test Your Knowledge. Learn Something New.</h2>
-            <p className="text-center text-xl max-w-xl">
-                Welcome to the ultimate quiz experience powered by React and Tailwind CSS. Whether you're brushing up on skills or just having fun, this app helps you learn, compete, and grow.
-            </p>
-            <Link to="/pages/category">
-                <button className="pt-2 pb-2 pr-4 pl-4 text-lg rounded-md
-                 border-2 border-stone-700 dark:border-gray-800 hover:bg-stone-700 hover:text-orange-50 hover:dark:bg-gray-800
+            <div className='flex justify-center items-center flex-col gap-5' data-aos="fade-down">
+                <h1 className="text-7xl font-bold text-center">Quiz App!</h1>
+                <h2 className="text-4xl text-center font-semibold">Test Your Knowledge. Learn Something New.</h2>
+                <p className="text-center text-xl max-w-xl">
+                    Welcome to the ultimate quiz experience powered by React and Tailwind CSS. Whether you're brushing up on skills or just having fun, this app helps you learn, compete, and grow.
+                </p>
+                <Link to="/pages/category">
+                    <button className="pt-2 pb-2 pr-4 pl-4 text-lg rounded-md
+                 border-2 border-stone-700 dark:border-gray-800 hover:bg-stone-700
+                  hover:text-orange-50 hover:dark:bg-gray-800
                  text-stone-800 dark:text-white bg-transparent dark:bg-transparent">Get Started</button>
-            </Link>
+                </Link>
+            </div>
         </div>
     )
 }
