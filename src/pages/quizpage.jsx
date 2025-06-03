@@ -14,6 +14,9 @@ import { quizData } from './quizdata';
 // import Navbar
 import { Navbar } from "./home";
 
+// import footer
+import { Footer } from "./home";
+
 // router
 import { Link } from 'react-router-dom';
 
@@ -30,9 +33,10 @@ export default function QuizPage() {
     const [showResult, setShowResult] = useState(false);
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen relative">
             <Navbar disableNav={!showResult} />
             <Quiz showResult={showResult} setShowResult={setShowResult} />
+            <Footer />
         </div>
     )
 }
@@ -79,6 +83,7 @@ function Quiz({ showResult, setShowResult }) {
                     c:text-5xl c:mb-6 d:text-4xl d:mb-4" data-aos="fade-down">{category} Quiz</h1>
 
                     <p className="c:text-2xl d:text-xl" data-aos="fade-up">🎉 Quiz Completed!</p>
+
                     <p className="text-xl c:mt-4 d:mt-3" data-aos="fade-up" data-aos-delay="200">
                         Your Score: <span className="font-semibold text-orange-400">{score}</span> / {questions.length}
                     </p>
@@ -120,10 +125,11 @@ function Quiz({ showResult, setShowResult }) {
     const currentQuestion = questions[current];
 
     return (
-        <div className="quiz-page pt-32 px-5 flex items-center flex-col min-h-screen
+        <div className="quiz-page pt-32 px-5 pb-16 flex items-center flex-col min-h-screen
            bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
             <h1 data-aos="fade-down" className="font-bold capitalize
-            c:text-5xl c:mb-10 d:text-4xl d:mb-6">{category} Quiz</h1>
+            c:mb-10 d:text-5xl d:mb-8">{category} Quiz</h1>
+
             <div data-aos="fade-up" className="border border-stone-700 dark:border-white rounded-lg
             a:w-full a:max-w-xl a:py-4 a:px-5 d:py-4 d:px-5">
                 <p className="mb-4 font-semibold
@@ -142,7 +148,8 @@ function Quiz({ showResult, setShowResult }) {
                                 name={`q${current}`}
                                 checked={selectedOption === i}
                                 onChange={() => handleOptionSelect(i)}
-                                className="mr-3 cursor-pointer scale-125 accent-orange-300 dark:accent-orange-500"
+                                className="mr-3 cursor-pointer accent-orange-300 dark:accent-orange-500
+                                c:scale-125 d:scale-100"
                             />
                             {opt}
                         </label>

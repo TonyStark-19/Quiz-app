@@ -19,9 +19,10 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="h-screen w-screen">
+        <div className="h-screen w-full">
             <Navbar />
             <Content />
+            <Footer />
         </div>
     )
 }
@@ -58,6 +59,7 @@ export function Navbar({ disableNav }) {
                     <Link to="/">Quiz App</Link>
                 )}
             </div>
+
             <button
                 onClick={toggleTheme}
                 className="px-3 py-1 rounded-md
@@ -78,12 +80,16 @@ function Content() {
             <div className='flex justify-center items-center flex-col gap-5' data-aos="fade-down">
                 <h1 className="font-bold text-center
                 a:text-7xl b:text-6xl c:text-5xl d:text-4xl">Quiz App!</h1>
-                <h2 className="text-4xl text-center font-semibold
+
+                <h2 className="text-center font-semibold
                 a:max-w-2xl c:text-3xl c:max-w-lg d:text-2xl d:max-w-96">Test Your Knowledge. Learn Something New.</h2>
+
                 <p className="text-center text-xl
                 b:max-w-xl b:w-full c:max-w-lg c:w-full c:tracking-wide d:tracking-normal d:w-80">
-                    Welcome to the ultimate quiz experience powered by React and Tailwind CSS. Whether you're brushing up on skills or just having fun, this app helps you learn, compete, and grow.
+                    Welcome to the ultimate quiz experience powered by React and Tailwind CSS.
+                    Whether you're brushing up on skills or just having fun, this app helps you learn, compete, and grow.
                 </p>
+
                 <Link to="/pages/category">
                     <button className="pt-2 pb-2 pr-4 pl-4 text-lg rounded-md
                  border-2 border-stone-700 dark:border-gray-800 hover:bg-stone-700
@@ -91,6 +97,16 @@ function Content() {
                  text-stone-800 dark:text-white bg-transparent dark:bg-transparent">Get Started</button>
                 </Link>
             </div>
+        </div>
+    )
+}
+
+// footer
+export function Footer() {
+    return (
+        <div className='absolute bottom-3 flex justify-center items-center w-full
+        bg-orange-100 dark:bg-gray-950  text-stone-800 dark:text-white'>
+            <p>Made with ❤️ by Aditya chandel</p>
         </div>
     )
 }

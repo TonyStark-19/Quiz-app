@@ -1,6 +1,9 @@
 // import Navbar
 import { Navbar } from "./home";
 
+// import footer
+import { Footer } from "./home";
+
 // import use navigate
 import { useNavigate } from "react-router-dom";
 
@@ -22,9 +25,10 @@ export default function CategoryPage() {
     }, []);
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen relative">
             <Navbar />
             <CategoryContent />
+            <Footer />
         </div>
     )
 }
@@ -88,10 +92,10 @@ function CategoryContent() {
     const navigate = useNavigate();
 
     return (
-        <div className="content flex-col gap-6 pt-28 w-full h-full
+        <div className="content flex-col gap-6 pt-28 pb-8 w-full h-full
          bg-orange-100 dark:bg-gray-950  text-stone-800 dark:text-white">
             <h1 data-aos="fade-down" className="font-bold text-center
-            a:text-6xl b:text-5xl d:text-4xl">Choose Quiz Category</h1>
+            a:text-6xl b:text-5xl d:text-4xl d:px-4">Choose Quiz Category</h1>
 
             <div className="box-wrap pb-10 px-5 flex-wrap flex justify-center flex-row gap-4
             a:pt-14 b:pt-10 d:pt-8">
@@ -99,8 +103,11 @@ function CategoryContent() {
                     <div className="flex flex-col justify-center box w-96 border-2 py-4 px-5 rounded-lg
                    border-stone-600 dark:border-gray-500 text-stone-800 dark:text-white" key={idx} data-aos="fade-up">
                         <h2 className="text-2xl font-bold">{arr.title}</h2>
+
                         <h4 className="mt-2">{arr.description}</h4>
+
                         <p className="mt-2">{arr.info}</p>
+
                         <button
                             className="rounded-md p-1 mt-3
                              bg-stone-700 dark:bg-gray-800 hover:bg-stone-600 dark:hover:bg-gray-900 text-orange-50 dark:text-white"
