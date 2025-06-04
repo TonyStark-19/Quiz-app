@@ -76,8 +76,8 @@ function Quiz({ showResult, setShowResult }) {
     // to show result
     if (showResult) {
         return (
-            <div className="quiz-page text-center flex justify-center items-center min-h-screen 
-             bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
+            <div className="text-center flex justify-center items-center min-h-screen 
+            bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
                 <div className='flex justify-center items-center flex-col max-w-lg w-full px-5'>
                     <h1 className="font-bold capitalize
                     c:text-5xl c:mb-6 d:text-4xl d:mb-4" data-aos="fade-down">{category} Quiz</h1>
@@ -89,7 +89,7 @@ function Quiz({ showResult, setShowResult }) {
                     </p>
 
                     <p className="text-xl text-stone-800 dark:text-white
-                c:max-w-lg c:w-full c:mt-6 d:mt-4 d:max-w-sm" data-aos="fade-in" data-aos-delay="400">
+                    c:max-w-lg c:w-full c:mt-6 d:mt-4 d:max-w-sm" data-aos="fade-in" data-aos-delay="400">
                         {score === questions.length
                             ? "Excellent! You nailed it! 🏆"
                             : score >= questions.length / 2
@@ -120,27 +120,26 @@ function Quiz({ showResult, setShowResult }) {
         );
     }
 
-
     // tracking current question
     const currentQuestion = questions[current];
 
     return (
-        <div className="quiz-page pt-32 px-5 pb-16 flex items-center flex-col min-h-screen
-           bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
+        <div className="pt-32 px-5 pb-16 flex items-center flex-col min-h-screen
+            bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
             <h1 data-aos="fade-down" className="font-bold capitalize
             c:mb-10 d:text-5xl d:mb-8">{category} Quiz</h1>
 
             <div data-aos="fade-up" className="border border-stone-700 dark:border-white rounded-lg
-            a:w-full a:max-w-xl a:py-4 a:px-5 d:py-4 d:px-5">
+                a:w-full a:max-w-xl a:py-4 a:px-5 d:py-4 d:px-5">
                 <p className="mb-4 font-semibold
                 b:text-2xl d:text-xl">
-                    {current + 1}. {currentQuestion.question}
+                    Q {current + 1} : {currentQuestion.question}
                 </p>
 
                 {currentQuestion.options.map((opt, i) => (
                     <div key={i} className="tracking-wide mb-3">
-                        <label className="cursor-pointer text-xl rounded-md 
-                        bg-stone-700/95 dark:bg-gray-800 block text-orange-100 dark:text-white
+                        <label className="cursor-pointer text-xl rounded-md flex items-center
+                        bg-stone-700/95 dark:bg-gray-800 text-orange-100 dark:text-white
                         dark:hover:bg-gray-800/70 hover:bg-stone-800/90
                         c:p-3 c:pl-5 d:p-2 d:pl-4">
                             <input
@@ -148,7 +147,7 @@ function Quiz({ showResult, setShowResult }) {
                                 name={`q${current}`}
                                 checked={selectedOption === i}
                                 onChange={() => handleOptionSelect(i)}
-                                className="mr-3 cursor-pointer accent-orange-300 dark:accent-orange-500
+                                className="mr-3 mt-1 cursor-pointer accent-orange-300 dark:accent-orange-500
                                 c:scale-125 d:scale-100"
                             />
                             {opt}

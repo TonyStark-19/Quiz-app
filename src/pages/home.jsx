@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 // router
 import { Link } from 'react-router-dom';
 
+// react icons
+import { MdOutlineQuiz } from "react-icons/md";
+
 // AOS animations
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -50,13 +53,17 @@ export function Navbar({ disableNav }) {
     };
 
     return (
-        <div className="navbar flex justify-between flex-row p-4 fixed z-10 w-full border-b-2 
-        border-stone-800 dark:border-white bg-orange-100 dark:bg-gray-950">
-            <div className="head text-2xl font-bold text-stone-800 dark:text-white">
+        <div className="flex justify-between flex-row fixed z-10 w-full border-b-2 
+        border-stone-800 dark:border-white bg-orange-100 dark:bg-gray-950
+        c:p-4 d:p-3">
+            <div className="text-2xl font-bold text-stone-800 dark:text-white">
                 {disableNav ? (
-                    <span className="cursor-not-allowed opacity-50">Quiz App</span>
+                    <span className="cursor-not-allowed opacity-50 
+                    flex flex-row items-center justify-center gap-2">Quiz App <MdOutlineQuiz className='mt-1' /></span>
                 ) : (
-                    <Link to="/">Quiz App</Link>
+                    <Link to="/"
+                        className='flex flex-row items-center justify-center gap-2'>Quiz App <MdOutlineQuiz className='mt-1' />
+                    </Link>
                 )}
             </div>
 
@@ -64,7 +71,7 @@ export function Navbar({ disableNav }) {
                 onClick={toggleTheme}
                 className="px-3 py-1 rounded-md
                 text-stone-800 dark:text-white border border-stone-600 dark:border-gray-800
-                 hover:bg-stone-600 hover:text-white dark:hover:bg-gray-800 transition"
+                hover:bg-stone-600 hover:text-white dark:hover:bg-gray-800 transition"
             >
                 {isDark ? '🌞 Light' : '🌙 Dark'}
             </button>
@@ -75,26 +82,27 @@ export function Navbar({ disableNav }) {
 // content
 function Content() {
     return (
-        <div className="content z-1 flex justify-center items-center pt-10 w-full h-full
-         bg-orange-100 dark:bg-gray-950  text-stone-800 dark:text-white">
-            <div className='flex justify-center items-center flex-col gap-5' data-aos="fade-down">
+        <div className="z-1 flex justify-center items-center pt-10 w-full h-full
+         bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
+            <div className='flex justify-center items-center flex-col gap-5
+            c:px-5 d:px-0' data-aos="fade-down">
                 <h1 className="font-bold text-center
                 a:text-7xl b:text-6xl c:text-5xl d:text-4xl">Quiz App!</h1>
 
                 <h2 className="text-center font-semibold
-                a:max-w-2xl c:text-3xl c:max-w-lg d:text-2xl d:max-w-96">Test Your Knowledge. Learn Something New.</h2>
+                c:text-3xl c:max-w-2xl d:text-2xl d:max-w-96">Test Your Knowledge. Learn Something New.</h2>
 
                 <p className="text-center text-xl
-                b:max-w-xl b:w-full c:max-w-lg c:w-full c:tracking-wide d:tracking-normal d:w-80">
+                c:max-w-xl c:w-full c:tracking-wide d:tracking-normal d:w-80">
                     Welcome to the ultimate quiz experience powered by React and Tailwind CSS.
                     Whether you're brushing up on skills or just having fun, this app helps you learn, compete, and grow.
                 </p>
 
                 <Link to="/pages/category">
                     <button className="pt-2 pb-2 pr-4 pl-4 text-lg rounded-md
-                 border-2 border-stone-700 dark:border-gray-800 hover:bg-stone-700
-                  hover:text-orange-50 hover:dark:bg-gray-800
-                 text-stone-800 dark:text-white bg-transparent dark:bg-transparent">Get Started</button>
+                    border-2 border-stone-700 dark:border-gray-800 hover:bg-stone-700
+                    hover:text-orange-50 hover:dark:bg-gray-800
+                    text-stone-800 dark:text-white bg-transparent dark:bg-transparent">Get Started</button>
                 </Link>
             </div>
         </div>
@@ -105,7 +113,7 @@ function Content() {
 export function Footer() {
     return (
         <div className='absolute bottom-3 flex justify-center items-center w-full
-        bg-orange-100 dark:bg-gray-950  text-stone-800 dark:text-white'>
+        bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white'>
             <p>Made with ❤️ by Aditya chandel</p>
         </div>
     )
