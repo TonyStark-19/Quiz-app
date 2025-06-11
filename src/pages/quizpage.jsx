@@ -158,7 +158,8 @@ function Quiz({ showResult, setShowResult }) {
                 <button
                     onClick={handleNext}
                     disabled={selectedOption === null}
-                    className="mt-2 px-4 py-2 w-20 bg-orange-600 text-white rounded hover:bg-orange-700 disabled:opacity-50"
+                    className="mt-2 px-4 py-2 w-full cursor-pointer uppercase
+                    bg-orange-600 text-white rounded-md hover:bg-orange-700 disabled:opacity-50"
                 >
                     {current === questions.length - 1 ? "Finish" : "Next"}
                 </button>

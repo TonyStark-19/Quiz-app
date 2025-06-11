@@ -99,7 +99,7 @@ function Content() {
                 </p>
 
                 <Link to="/pages/category">
-                    <button className="pt-2 pb-2 pr-4 pl-4 text-lg rounded-md
+                    <button className="pt-2 pb-2 pr-4 pl-4 text-lg rounded-lg
                     border-2 border-stone-700 dark:border-gray-800 hover:bg-stone-700
                     hover:text-orange-50 hover:dark:bg-gray-800
                     text-stone-800 dark:text-white bg-transparent dark:bg-transparent">Get Started</button>
