@@ -14,6 +14,12 @@ import 'aos/dist/aos.css';
 // import use effect
 import { useEffect } from 'react';
 
+// react icons
+import { FaCode, FaHtml5, FaCss3Alt, FaBootstrap, FaGithub } from "react-icons/fa";
+import { TbBrandCpp } from "react-icons/tb";
+import { IoLogoJavascript } from "react-icons/io5";
+import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
+
 // category page
 export default function CategoryPage() {
 
@@ -38,52 +44,72 @@ const array = [
     {
         title: "C",
         description: "Strengthen your understanding of the foundational programming language. Pointers, loops, arrays — master the building blocks.",
-        info: "10 Questions | Beginner friendly"
+        info: "10 Questions | Beginner friendly",
+        icon: <FaCode />,
+        color: "text-gray-500"
     },
     {
         title: "Cpp",
         description: "Test your knowledge of object-oriented programming, STL, and advanced logic-building techniques",
-        info: "12 Questions | Intermediate Level"
+        info: "12 Questions | Intermediate Level",
+        icon: <TbBrandCpp />,
+        color: "text-red-400"
     },
     {
         title: "OOPS Concept",
         description: "Dive into core OOP concepts — encapsulation, inheritance, polymorphism, and abstraction",
-        info: "10 Questions | Theory + Conceptual"
+        info: "10 Questions | Theory + Conceptual",
+        icon: <FaCode />,
+        color: "text-red-400"
     },
     {
         title: "HTML",
         description: "Explore the basics of web structure. Tags, forms, elements — everything you need to build strong foundations",
-        info: "10 Questions | Beginner Friendly"
+        info: "10 Questions | Beginner Friendly",
+        icon: <FaHtml5 />,
+        color: "text-orange-500"
     },
     {
         title: "CSS",
         description: "Test your styling skills with quizzes on selectors, layouts, animations, and responsive design",
-        info: "12 Questions | Beginner to Intermediate"
+        info: "12 Questions | Beginner to Intermediate",
+        icon: <FaCss3Alt />,
+        color: "text-blue-500"
     },
     {
         title: "JavaScript",
         description: "Challenge your logic, syntax, and knowledge of JS concepts like arrays, functions, and DOM manipulation",
-        info: "15 Questions | Mixed Difficulty"
+        info: "15 Questions | Mixed Difficulty",
+        icon: <IoLogoJavascript />,
+        color: "text-yellow-500"
     },
     {
         title: "React JS",
         description: "Master components, hooks, props, and state management in the world’s most popular frontend library",
-        info: "12 Questions | Intermediate to Advanced"
+        info: "12 Questions | Intermediate to Advanced",
+        icon: <RiReactjsFill />,
+        color: "text-cyan-500"
     },
     {
         title: "Bootstrap",
         description: "Understand the core components, grid system, and classes that make responsive design fast and easy",
-        info: "10 Questions | Beginner Level"
+        info: "10 Questions | Beginner Level",
+        icon: <FaBootstrap />,
+        color: "text-violet-600"
     },
     {
         title: "Tailwind CSS",
         description: "Test your knowledge of utility-first CSS. Classes, responsiveness, and layouting made quick and clean",
-        info: "10 Questions | UI Focused"
+        info: "10 Questions | UI Focused",
+        icon: <RiTailwindCssFill />,
+        color: "text-teal-500"
     },
     {
         title: "Git & GitHub",
         description: "Version control your knowledge! Commands, branches, commits, and collaboration — test it all",
-        info: "10 Questions | CLI + GitHub Basics"
+        info: "10 Questions | CLI + GitHub Basics",
+        icon: <FaGithub />,
+        color: "text-gray-700"
     }
 ]
 
@@ -102,7 +128,9 @@ function CategoryContent() {
                 {array.map((arr, idx) => (
                     <div className="flex flex-col justify-center box w-96 border-2 py-4 px-5 rounded-lg
                     border-stone-600 dark:border-gray-500 text-stone-800 dark:text-white" key={idx} data-aos="fade-up">
-                        <h2 className="text-2xl font-bold">{arr.title}</h2>
+                        <h2 className="text-2xl font-bold flex flex-row gap-3 items-center">{arr.title}
+                            <div className={arr.color}>{arr.icon}</div>
+                        </h2>
 
                         <h4 className="mt-2">{arr.description}</h4>
 

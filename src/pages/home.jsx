@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // react icons
-import { MdOutlineQuiz } from "react-icons/md";
+import { RiReactjsFill } from "react-icons/ri";
 
 // AOS animations
 import AOS from 'aos';
@@ -59,10 +59,12 @@ export function Navbar({ disableNav }) {
             <div className="text-2xl font-bold text-stone-800 dark:text-white">
                 {disableNav ? (
                     <span className="cursor-not-allowed opacity-50 
-                    flex flex-row items-center justify-center gap-2">Quiz App <MdOutlineQuiz className='mt-1' /></span>
+                    flex flex-row items-center justify-center gap-2">Quiz App
+                        <RiReactjsFill className='mt-1 text-cyan-500' /></span>
                 ) : (
                     <Link to="/"
-                        className='flex flex-row items-center justify-center gap-2'>Quiz App <MdOutlineQuiz className='mt-1' />
+                        className='flex flex-row items-center justify-center gap-2'>Quiz App
+                        <RiReactjsFill className='mt-1 text-cyan-500' />
                     </Link>
                 )}
             </div>
