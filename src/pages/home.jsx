@@ -14,6 +14,7 @@ import 'aos/dist/aos.css';
 // home page
 export default function Home() {
 
+    // AOS animations
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -33,6 +34,7 @@ export default function Home() {
 // navbar
 export function Navbar({ disableNav }) {
 
+    // theme toggle
     const [isDark, setIsDark] = useState(() => {
         // initialize from localStorage
         return localStorage.getItem("theme") === "dark";
@@ -60,11 +62,11 @@ export function Navbar({ disableNav }) {
                 {disableNav ? (
                     <span className="cursor-not-allowed opacity-50 
                     flex flex-row items-center justify-center gap-2">Quiz App
-                        <RiReactjsFill className='mt-1 text-cyan-500' /></span>
+                        <RiReactjsFill className='mt-1 b:text-3xl c:text-2xl text-cyan-500' /></span>
                 ) : (
                     <Link to="/"
                         className='flex flex-row items-center justify-center gap-2'>Quiz App
-                        <RiReactjsFill className='mt-1 text-cyan-500' />
+                        <RiReactjsFill className='mt-1 b:text-3xl c:text-2xl text-cyan-500' />
                     </Link>
                 )}
             </div>
@@ -72,7 +74,7 @@ export function Navbar({ disableNav }) {
             <button
                 onClick={toggleTheme}
                 className="px-3 py-1 rounded-md
-                text-stone-800 dark:text-white border border-stone-600 dark:border-gray-800
+                text-stone-800 dark:text-white border-2 border-stone-600 dark:border-gray-800
                 hover:bg-stone-600 hover:text-white dark:hover:bg-gray-800 transition"
             >
                 {isDark ? '🌞 Light' : '🌙 Dark'}

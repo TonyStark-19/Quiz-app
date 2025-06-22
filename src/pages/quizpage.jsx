@@ -23,6 +23,7 @@ import { Link } from 'react-router-dom';
 // quiz page
 export default function QuizPage() {
 
+    // AOS animations
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -30,6 +31,7 @@ export default function QuizPage() {
         });
     }, []);
 
+    // Show result
     const [showResult, setShowResult] = useState(false);
 
     return (
@@ -129,7 +131,7 @@ function Quiz({ showResult, setShowResult }) {
             <h1 data-aos="fade-down" className="font-bold capitalize
             c:mb-10 d:text-5xl d:mb-8">{category} Quiz</h1>
 
-            <div data-aos="fade-up" className="border border-stone-700 dark:border-white rounded-lg
+            <div data-aos="fade-up" className="border-2 border-stone-700 dark:border-white rounded-lg
                 a:w-full a:max-w-xl a:py-4 a:px-5 d:py-4 d:px-5">
                 <p className="mb-4 font-semibold
                 b:text-2xl d:text-xl">
@@ -139,8 +141,8 @@ function Quiz({ showResult, setShowResult }) {
                 {currentQuestion.options.map((opt, i) => (
                     <div key={i} className="tracking-wide mb-3">
                         <label className="cursor-pointer text-xl rounded-md flex items-center
-                        bg-stone-700/95 dark:bg-gray-800 text-orange-100 dark:text-white
-                        dark:hover:bg-gray-800/70 hover:bg-stone-800/90
+                        bg-stone-600 dark:bg-gray-800 text-orange-100 dark:text-white
+                        dark:hover:bg-gray-800/70 hover:bg-stone-700
                         c:p-3 c:pl-5 d:p-2 d:pl-4">
                             <input
                                 type="radio"

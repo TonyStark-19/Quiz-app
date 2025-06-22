@@ -23,6 +23,7 @@ import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 // category page
 export default function CategoryPage() {
 
+    // AOS animations
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -42,7 +43,7 @@ export default function CategoryPage() {
 // array for box content
 const array = [
     {
-        title: "C",
+        title: "C Language",
         description: "Strengthen your understanding of the foundational programming language. Pointers, loops, arrays — master the building blocks.",
         info: "10 Questions | Beginner friendly",
         icon: <FaCode />,
@@ -115,6 +116,7 @@ const array = [
 
 // category page content
 function CategoryContent() {
+    // use navigate for quiz page navigation
     const navigate = useNavigate();
 
     return (
@@ -138,7 +140,7 @@ function CategoryContent() {
 
                         <button
                             className="rounded-md p-1 mt-3
-                            bg-stone-700 dark:bg-gray-800 hover:bg-stone-600 dark:hover:bg-gray-900 text-orange-50 dark:text-white"
+                            bg-stone-600 dark:bg-gray-800 hover:bg-stone-700 dark:hover:bg-gray-900 text-orange-50 dark:text-white"
                             onClick={() => navigate(`/quiz/${arr.title.split(" ")[0].toLowerCase()}`)}
                         >
                             Start Quiz
