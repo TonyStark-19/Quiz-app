@@ -1,5 +1,5 @@
-// import use params
-import { useParams } from 'react-router-dom';
+// import use params and link
+import { useParams, Link } from 'react-router-dom';
 
 // import use state
 import { useState, useEffect } from 'react';
@@ -11,14 +11,8 @@ import 'aos/dist/aos.css';
 // import quizdata
 import { quizData } from './quizdata';
 
-// import Navbar
-import { Navbar } from "./home";
-
-// import footer
-import { Footer } from "./home";
-
-// router
-import { Link } from 'react-router-dom';
+// import Navbar and footer
+import { Navbar, Footer } from "./home";
 
 // quiz page
 export default function QuizPage() {
@@ -132,7 +126,7 @@ function Quiz({ showResult, setShowResult }) {
             c:mb-10 d:text-5xl d:mb-8">{category} Quiz</h1>
 
             <div data-aos="fade-up" className="border-2 border-stone-700 dark:border-white rounded-lg
-                a:w-full a:max-w-xl a:py-4 a:px-5 d:py-4 d:px-5">
+                b:max-w-xl max-b:w-full a:py-4 a:px-5 d:py-4 d:px-5">
                 <p className="mb-4 font-semibold
                 b:text-2xl d:text-xl">
                     Q {current + 1} : {currentQuestion.question}
@@ -140,10 +134,10 @@ function Quiz({ showResult, setShowResult }) {
 
                 {currentQuestion.options.map((opt, i) => (
                     <div key={i} className="tracking-wide mb-3">
-                        <label className="cursor-pointer text-xl rounded-md flex items-center
+                        <label className="cursor-pointer rounded-md flex items-center
                         bg-stone-600 dark:bg-gray-800 text-orange-100 dark:text-white
                         dark:hover:bg-gray-800/70 hover:bg-stone-700
-                        c:p-3 c:pl-5 d:p-2 d:pl-4">
+                        c:p-3 c:pl-5 d:p-2 d:pl-4 c:text-xl max-c:text-[18px]">
                             <input
                                 type="radio"
                                 name={`q${current}`}

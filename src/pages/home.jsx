@@ -23,7 +23,10 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="h-screen w-full">
+        <div className="h-screen w-full"
+            style={{
+                background: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #0d1a36 100%)",
+            }}>
             <Navbar />
             <Content />
             <Footer />
@@ -87,7 +90,7 @@ export function Navbar({ disableNav }) {
 function Content() {
     return (
         <div className="z-1 flex justify-center items-center pt-10 w-full h-full
-         bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
+         bg-orange-100 dark:bg-transparent text-stone-800 dark:text-white">
             <div className='flex justify-center items-center flex-col gap-5
             c:px-5 d:px-0' data-aos="fade-down">
                 <h1 className="font-bold text-center
@@ -117,7 +120,7 @@ function Content() {
 export function Footer() {
     return (
         <div className='absolute bottom-3 flex justify-center items-center w-full
-        bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white'>
+        bg-orange-100 dark:bg-transparent text-stone-800 dark:text-white'>
             <p>Made with ❤️ by Aditya chandel</p>
         </div>
     )

@@ -1,8 +1,5 @@
-// import Navbar
-import { Navbar } from "./home";
-
-// import footer
-import { Footer } from "./home";
+// import Navbar and footer
+import { Navbar, Footer } from "./home";
 
 // import use navigate
 import { useNavigate } from "react-router-dom";
@@ -125,22 +122,24 @@ function CategoryContent() {
             <h1 data-aos="fade-down" className="font-bold text-center
             a:text-6xl b:text-5xl d:text-4xl d:px-4">Choose Quiz Category</h1>
 
-            <div className="pb-10 px-5 flex-wrap flex justify-center flex-row gap-4
+            <div className="pb-10 px-5 flex-wrap flex justify-center flex-row min-[500px]:gap-6 max-[500px]:gap-4
             a:pt-14 b:pt-10 d:pt-8">
                 {array.map((arr, idx) => (
-                    <div className="flex flex-col justify-center box w-96 border-2 py-4 px-5 rounded-lg
+                    <div className="flex flex-col justify-center border-2 py-4 px-5 rounded-lg min-[1250px]:w-96 max-[1250px]:w-80
+                    max-[1050px]:w-96 max-[850px]:w-80 max-[700px]:w-full
                     border-stone-600 dark:border-gray-500 text-stone-800 dark:text-white" key={idx} data-aos="fade-up">
                         <h2 className="text-2xl font-bold flex flex-row gap-3 items-center">{arr.title}
                             <div className={arr.color}>{arr.icon}</div>
                         </h2>
 
-                        <h4 className="mt-2">{arr.description}</h4>
+                        <h4 className="min-[500px]:mt-2.5 max-[500px]:mt-2">{arr.description}</h4>
 
-                        <p className="mt-2">{arr.info}</p>
+                        <p className="min-[500px]:mt-2.5 max-[500px]:mt-2">{arr.info}</p>
 
                         <button
                             className="rounded-md p-1 mt-3
-                            bg-stone-600 dark:bg-gray-800 hover:bg-stone-700 dark:hover:bg-gray-900 text-orange-50 dark:text-white"
+                            bg-stone-600 dark:bg-gray-800 hover:bg-stone-700 dark:hover:bg-gray-900 text-orange-50
+                            dark:text-white"
                             onClick={() => navigate(`/quiz/${arr.title.split(" ")[0].toLowerCase()}`)}
                         >
                             Start Quiz
