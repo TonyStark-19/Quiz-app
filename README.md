@@ -45,7 +45,7 @@ The project is live and can be viewed here: [Quiz-app](https://quiz-app-drab-bet
 git clone https://github.com/TonyStark-19/Quiz-app.git
 
 # 2. Move into the project folder
-cd quiz-app
+cd Quiz-app
 
 # 3. Install dependencies
 npm install
