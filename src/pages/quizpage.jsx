@@ -12,7 +12,8 @@ import 'aos/dist/aos.css';
 import { quizData } from './quizdata';
 
 // import Navbar and footer
-import { Navbar, Footer } from "./home";
+import { Navbar } from '../Components/Navbar';
+import { Footer } from '../Components/Footer';
 
 // quiz page
 export default function QuizPage() {
@@ -29,7 +30,10 @@ export default function QuizPage() {
     const [showResult, setShowResult] = useState(false);
 
     return (
-        <div className="min-h-screen relative">
+        <div className="min-h-screen relative"
+            style={{
+                background: "radial-gradient(ellipse 90% 90% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000",
+            }}>
             <Navbar disableNav={!showResult} />
             <Quiz showResult={showResult} setShowResult={setShowResult} />
             <Footer />
@@ -73,7 +77,7 @@ function Quiz({ showResult, setShowResult }) {
     if (showResult) {
         return (
             <div className="text-center flex justify-center items-center min-h-screen 
-            bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
+            bg-orange-100 dark:bg-transparent text-stone-800 dark:text-white">
                 <div className='flex justify-center items-center flex-col max-w-lg w-full px-5'>
                     <h1 className="font-bold capitalize
                     c:text-5xl c:mb-6 d:text-4xl d:mb-4" data-aos="fade-down">{category} Quiz</h1>
@@ -120,13 +124,13 @@ function Quiz({ showResult, setShowResult }) {
     const currentQuestion = questions[current];
 
     return (
-        <div className="pt-32 px-5 pb-16 flex items-center flex-col min-h-screen
-            bg-orange-100 dark:bg-gray-950 text-stone-800 dark:text-white">
+        <div className="pt-20 px-5 pb-16 flex items-center flex-col min-h-screen
+            bg-orange-100 dark:bg-transparent text-stone-800 dark:text-white">
             <h1 data-aos="fade-down" className="font-bold capitalize
             c:mb-10 d:text-5xl d:mb-8">{category} Quiz</h1>
 
             <div data-aos="fade-up" className="border-2 border-stone-700 dark:border-white rounded-lg
-                b:max-w-xl max-b:w-full a:py-4 a:px-5 d:py-4 d:px-5">
+                b:max-w-xl b:w-full max-b:w-full a:py-5 a:px-6 d:py-4 d:px-5">
                 <p className="mb-4 font-semibold
                 b:text-2xl d:text-xl">
                     Q {current + 1} : {currentQuestion.question}
