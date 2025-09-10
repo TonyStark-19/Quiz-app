@@ -30,10 +30,9 @@ export default function CategoryPage() {
     }, []);
 
     return (
-        <div className="min-h-screen relative"
-            style={{
-                background: "radial-gradient(ellipse 90% 90% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #000000",
-            }}>
+        <div className="min-h-screen w-full relative
+            bg-[radial-gradient(125%_125%_at_50%_77%,#ffffff_40%,#f59e0b_100%)]
+            dark:bg-[radial-gradient(ellipse_90%_90%_at_50%_0%,rgba(120,180,255,0.25)_0%,transparent_70%)] dark:bg-black">
             <Navbar />
             <CategoryContent />
             <Footer />
@@ -122,9 +121,9 @@ function CategoryContent() {
 
     return (
         <div className="flex flex-col justify-center items-center gap-6 pt-14 pb-8 w-full h-full font-poppins
-        bg-orange-100 dark:bg-transparent text-stone-800 dark:text-white">
-            <h1 data-aos="fade-down" className="font-bold text-center mt-8 mb-4 pb-8 border-white/30 border-b-2 w-[75%]
-            a:text-6xl b:text-5xl d:text-4xl d:px-4">Choose Quiz Category</h1>
+        text-stone-800 dark:text-white">
+            <h1 data-aos="fade-down" className="font-bold text-center mt-8 mb-4 border-stone-800 dark:border-white/30
+            border-b-2 w-[75%] e:text-6xl a:text-[50px] b:text-[40px] d:text-[35px] d:px-4 a:pb-8 d:pb-4">Choose Quiz Category</h1>
 
             <div className="pb-10 px-5 mb-12 flex-wrap flex justify-center flex-row min-[500px]:gap-6 max-[500px]:gap-4
             a:pt-5 b:pt-5 d:pt-8">
@@ -142,8 +141,7 @@ function CategoryContent() {
 
                         <button
                             className="rounded-md p-1.5 mt-3
-                            bg-stone-600 dark:bg-gray-800 hover:bg-stone-700 dark:hover:bg-gray-900 text-orange-50
-                            dark:text-white"
+                            bg-stone-600 dark:bg-gray-800 hover:bg-stone-700 dark:hover:bg-gray-900 text-white"
                             onClick={() => navigate(`/quiz/${arr.title.split(" ")[0].toLowerCase()}`)}
                         >
                             Start Quiz
