@@ -33,9 +33,13 @@ export default function QuizPage() {
         <div className="min-h-screen w-full relative
             bg-[radial-gradient(125%_125%_at_50%_80%,#ffffff_40%,#f59e0b_100%)]
             dark:bg-[radial-gradient(ellipse_90%_90%_at_50%_0%,rgba(120,180,255,0.25)_0%,transparent_70%)] dark:bg-black">
-            <Navbar disableNav={!showResult} />
+            <div className="fixed w-full">
+                <Navbar disableNav={!showResult} />
+            </div>
             <Quiz showResult={showResult} setShowResult={setShowResult} />
-            <Footer />
+            <div className="pt-10">
+                <Footer />
+            </div>
         </div>
     )
 }
@@ -72,14 +76,26 @@ function Quiz({ showResult, setShowResult }) {
         }
     };
 
+    // map short category keys to full names
+    const categoryNames = {
+        C: "C language",
+        oops: "Oops concept",
+        bootstrap: "Bootstrap css",
+        tailwind: "Tailwind CSS",
+        git: "Git & GitHub",
+        react: "React.js",
+        javascript: "JavaScript",
+        html: "HTML",
+        css: "CSS"
+    };
+
     // to show result
     if (showResult) {
         return (
-            <div className="text-center flex justify-center items-center min-h-screen 
-            bg-orange-100 dark:bg-transparent text-stone-800 dark:text-white">
-                <div className='flex justify-center items-center flex-col max-w-lg w-full px-5'>
+            <div className="text-center flex justify-center items-center min-h-screen text-stone-800 dark:text-white">
+                <div className='flex justify-center items-center flex-col max-w-xl w-full px-5'>
                     <h1 className="font-bold capitalize
-                    c:text-5xl c:mb-6 d:text-4xl d:mb-4" data-aos="fade-down">{category} Quiz</h1>
+                    c:text-5xl c:mb-6 d:text-4xl d:mb-4" data-aos="fade-down">{categoryNames[category] || category} Quiz</h1>
 
                     <p className="c:text-2xl d:text-xl" data-aos="fade-up">🎉 Quiz Completed!</p>
 
@@ -123,10 +139,10 @@ function Quiz({ showResult, setShowResult }) {
     const currentQuestion = questions[current];
 
     return (
-        <div className="pt-20 px-5 pb-16 flex items-center flex-col min-h-screen
-             text-stone-800 dark:text-white">
+        <div className="a:pt-40 d:pt-32 px-5 pb-16 flex items-center flex-col min-h-screen text-stone-800 dark:text-white">
             <h1 data-aos="fade-down" className="font-bold capitalize border-stone-800 dark:border-white/30 border-b-2
-            e:w-[50%] d:w-[70%] text-center e:pb-8 d:pb-4 c:mb-10 e:text-5xl b:text-[40px] d:text-[35px]  d:mb-8">{category} Quiz</h1>
+            e:w-[50%] d:w-[70%] text-center e:pb-8 d:pb-4 c:mb-10 e:text-5xl b:text-[40px] d:text-[35px] d:mb-8">
+                {categoryNames[category] || category} Quiz</h1>
 
             <div data-aos="fade-up" className="border-2 border-stone-800 dark:border-white/30 dark:border-white rounded-lg
                 e:w-[60%] a:w-[80%] b:w-[85%] d:w-[95%] a:py-5 a:px-6 d:py-4 d:px-5">
@@ -136,9 +152,8 @@ function Quiz({ showResult, setShowResult }) {
 
                 {currentQuestion.options.map((opt, i) => (
                     <div key={i} className="tracking-wide mb-3">
-                        <label className="cursor-pointer rounded-md flex items-center
-                        bg-stone-600 dark:bg-gray-800 text-white dark:text-white
-                        dark:hover:bg-gray-800/70 hover:bg-stone-700
+                        <label className="cursor-pointer rounded-md flex items-center bg-stone-600 dark:bg-gray-800
+                        text-white dark:text-white dark:hover:bg-gray-800/70 hover:bg-stone-700
                         c:p-3 c:pl-5 d:p-2 d:pl-4 c:text-xl max-c:text-[18px]">
                             <input
                                 type="radio"

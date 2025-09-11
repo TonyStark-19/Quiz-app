@@ -25,7 +25,7 @@ export default function Home() {
 
     return (
         <div className="h-screen w-full
-            bg-[radial-gradient(125%_125%_at_50%_90%,#ffffff_40%,#f59e0b_100%)]
+            bg-[radial-gradient(125%_125%_at_50%_90%,#ffffff_35%,#f59e0b_100%)]
             dark:bg-[radial-gradient(ellipse_90%_90%_at_50%_0%,rgba(120,180,255,0.25)_0%,transparent_70%)] dark:bg-black">
             <div className="fixed w-full">
                 <Navbar />
