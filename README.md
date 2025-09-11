@@ -6,8 +6,11 @@ Welcome to the **React Quiz App**, a dynamic and responsive quiz platform built 
 
 ## 📸 Screenshots
 
-### 🏠 Home Page  
-![Home Page](/public/images/image.png)
+### 🏠 Home Page Dark 
+![Home Page](/public/images/image1.png)
+
+### 🏠 Home Page Light
+![Home Page](/public/images/image2.png)
 
 ---
 
