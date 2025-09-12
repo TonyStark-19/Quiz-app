@@ -773,5 +773,108 @@ export const quizData = {
             options: ["git push", "git pull", "git fetch", "git clone"],
             answer: "git pull"
         }
-    ]
+    ],
+  // python
+  python: [
+    {
+        question: "Which of the following is a valid Python data type?",
+        options: [
+            "number", 
+            "int", 
+            "string", 
+            "real"
+        ],
+        answer: "int"
+},
+    {
+        question: "Which symbol is used to declare a comment in Python?",
+        options: [
+            "//", 
+            "#", 
+            "/*", 
+            "<!--"
+        ],
+        answer: "#"
+},
+    {
+        question: "Which function is used to print output in Python?",
+        options: [
+            "echo()", 
+            "cout<<", 
+            "print()", 
+            "printf()"
+        ],
+        answer: "print()"
+},
+    {
+        question: "Which of the following data types is mutable in Python?",
+        options: [
+            "tuple", 
+            "string", 
+            "list", 
+            "int"
+        ],
+        answer: "list"
+},
+    {
+        question: "What is the output of `print(10 // 3)`?",
+        options: [
+            "3.333", 
+            "3", 
+            "4", 
+            "1"
+        ],
+        answer: "3"
+},
+    {
+        question: "Which of the following is NOT a valid variable name in Python?",
+        options: [
+            "my_var", 
+            "2ndVar", 
+            "_private", 
+            "varName"
+        ],
+        answer: "2ndVar"
+},
+    {
+        question: "What is the correct way to define a function in Python?",
+        options: [
+            "function myFunc():", 
+            "def myFunc():", 
+            "func myFunc():", 
+            "define myFunc():"
+        ],
+        answer: "def myFunc():"
+},
+    {
+        question: "Which of the following is used to handle exceptions in Python?",
+        options: [
+            "try-except", 
+            "catch-throw", 
+            "error-handle", 
+            "if-else"
+        ],
+        answer: "try-except"
+},
+    {
+        question: "What is the purpose of the 'if __name__ == __main__':` block?",
+        options: [
+            "To define a main function", 
+            "To execute code only when the script is run directly",
+            "To import modules", 
+            "To declare global variables"
+        ],
+        answer: "To execute code only when the script is run directly"
+},
+    {
+        question: "Which of the following libraries is used for data manipulation in Python?",
+        options: [
+            "NumPy", 
+            "Pandas", 
+            "Matplotlib", 
+            "Scikit-learn"
+        ],
+        answer: "Pandas"
+}
+]
 };

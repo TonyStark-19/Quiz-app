@@ -86,7 +86,8 @@ function Quiz({ showResult, setShowResult }) {
         react: "React.js",
         javascript: "JavaScript",
         html: "HTML",
-        css: "CSS"
+        css: "CSS",
+        python: "Python"
     };
 
     // to show result

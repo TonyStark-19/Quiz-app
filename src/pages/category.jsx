@@ -13,7 +13,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
 // react icons
-import { FaCode, FaHtml5, FaCss3Alt, FaBootstrap, FaGithub } from "react-icons/fa";
+import { FaCode, FaHtml5, FaCss3Alt, FaBootstrap, FaGithub, FaPython } from "react-icons/fa";
 import { TbBrandCpp } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
@@ -111,6 +111,13 @@ const array = [
         info: "10 Questions | CLI + GitHub Basics",
         icon: <FaGithub />,
         color: "text-gray-700"
+    },
+    {
+        title: "Python",
+        description: "Test your knowledge of Python syntax, data structures, libraries, and problem-solving techniques",
+        info: "10 Questions | Beginner to Advanced",
+        icon: <FaPython />,
+        color: "text-green-500"
     }
 ]
 
