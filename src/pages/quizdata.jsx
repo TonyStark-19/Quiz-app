@@ -817,7 +817,7 @@ export const quizData = {
         answer: "list"
 },
     {
-        question: "What is the output of `print(10 // 3)`?",
+        question: "What is the output of print(10 // 3)?",
         options: [
             "3.333", 
             "3", 
@@ -857,7 +857,7 @@ export const quizData = {
         answer: "try-except"
 },
     {
-        question: "What is the purpose of the 'if __name__ == __main__':` block?",
+        question: "What is the purpose of the if __name__ == __main__: block?",
         options: [
             "To define a main function", 
             "To execute code only when the script is run directly",
