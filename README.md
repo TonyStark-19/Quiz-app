@@ -1,6 +1,8 @@
 # 🧠 React Quiz App
 
-Welcome to the **React Quiz App**, a dynamic and responsive quiz platform built using **React** and **Tailwind CSS**. It allows users to test their knowledge across multiple categories with animated transitions and score tracking. The project is designed for a great user experience, supporting both **light** and **dark** themes.
+Welcome to the React **Quiz App**, a dynamic and **responsive** quiz platform built using **React** and **Tailwind CSS**. It allows users to test their knowledge across multiple categories with smooth transitions, score tracking, and now — a review section to check correct and incorrect answers after completing the quiz.
+
+The project ensures a great user experience, supporting both light and dark themes along with automatic scroll-to-top on every route change or navigation.
 
 ---
 
@@ -27,7 +29,10 @@ The project is live and can be viewed here: [Quiz-app](https://quiz-app-drab-bet
 - 🎨 **Smooth animations** using AOS (Animate On Scroll)
 - 🧩 **Multiple quiz categories** with structured data
 - 📊 **Score tracking** and conditional result feedback
-- 🧠 **User-friendly interface** with accessibility in mind
+- 🧠 **Review Answers** — view your correct and incorrect answers after completing the quiz
+- 🧾 **Detailed results summary** with retry and take-more-quiz options
+- ⬆️ **Scroll to Top** — automatically scrolls to top on every route change or when navigating back
+- 💡 **User-friendly** and accessible interface
 - ✅ **Navbar disabling** during quiz to avoid accidental exits
 
 ---
