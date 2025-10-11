@@ -35,7 +35,7 @@ export function Navbar({ disableNav }) {
     return (
         <div className="flex a:justify-evenly b:justify-around d:justify-between flex-row w-full border-stone-800
         dark:border-white font-poppins a:pt-10 d:pt-5 b:px-0 d:px-8">
-            <div className="text-[26px] font-bold text-stone-800 dark:text-white">
+            <div className="c:text-[26px] font-bold d:text-[22px] text-stone-800 dark:text-white">
                 {disableNav ? (
                     <span className="cursor-not-allowed opacity-50 
                     flex flex-row items-center justify-center gap-2">Quiz App</span>
@@ -48,7 +48,7 @@ export function Navbar({ disableNav }) {
 
             <button
                 onClick={toggleTheme}
-                className="p-2.5 rounded-full text-stone-800 dark:text-white hover:bg-[#f59e0b]/40
+                className="c:p-2.5 d:p-0 rounded-full text-stone-800 dark:text-white hover:bg-[#f59e0b]/40
                 hover:text-white dark:hover:bg-gray-800 transition"
             >
                 {isDark ? <CiLight className='text-2xl' /> : < MdOutlineDarkMode className='text-2xl' />}

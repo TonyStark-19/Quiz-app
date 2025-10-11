@@ -44,11 +44,11 @@ function Content() {
                 <h1 className="font-bold text-center mb-1 e:text-7xl a:text-6xl b:text-5xl d:text-4xl"
                     data-aos="fade-up" data-aos-delay="200">Quiz App!</h1>
 
-                <h2 className="text-center font-semibold w-full mb-1 e:text-3xl d:text-2xl"
+                <h2 className="text-center font-semibold w-full mb-1 e:text-3xl d:w-[80%] d:text-[20px]"
                     data-aos="fade-up" data-aos-delay="300">Test Your Knowledge. Learn Something New.</h2>
 
-                <p className="text-center text-xl tracking-wide mb-1 e:text-xl d:text-[18px] e:w-[40%] a:w-[50%]
-                b:w-[60%] d:w-[80%]" data-aos="fade-up" data-aos-delay="400">
+                <p className="text-center text-xl tracking-wide mb-1 e:text-xl d:text-[16px] e:w-[40%] a:w-[50%]
+                b:w-[60%] d:w-[70%]" data-aos="fade-up" data-aos-delay="400">
                     Welcome to the ultimate quiz experience powered by React and Tailwind CSS.
                     Whether you're brushing up on skills or just having fun, this app helps you learn, compete, and grow.
                 </p>

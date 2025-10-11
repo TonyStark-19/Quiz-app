@@ -229,13 +229,13 @@ function Quiz({ showResult, setShowResult }) {
     const currentQuestion = questions[current];
 
     return (
-        <div className="a:pt-20 d:pt-16 px-5 flex items-center flex-col min-h-screen text-stone-800 dark:text-white">
+        <div className="a:pt-20 d:pt-16 c:px-5 px-2.5 flex items-center flex-col min-h-screen text-stone-800 dark:text-white">
             <h1 data-aos="fade-down" className="font-bold capitalize border-stone-800 dark:border-white/30 border-b-2
-            e:w-[50%] d:w-[70%] text-center e:pb-8 d:pb-4 c:mb-10 e:text-5xl b:text-[40px] d:text-[35px] d:mb-8">
+            e:w-[50%] d:w-[80%] text-center e:pb-8 d:pb-4 c:mb-10 e:text-5xl b:text-[40px] d:text-[35px] d:mb-8">
                 {categoryNames[category] || category} Quiz</h1>
 
             <div data-aos="fade-up" className="border-2 border-stone-800 dark:border-white/30 dark:border-white rounded-lg
-                e:w-[60%] a:w-[80%] b:w-[85%] d:w-[95%] a:py-5 a:px-6 d:py-4 d:px-5">
+                e:w-[60%] a:w-[80%] b:w-[85%] d:w-[100%] a:py-5 a:px-6 d:py-4 d:px-5">
                 <p className="mb-4 font-semibold b:text-2xl d:text-xl">
                     Q {current + 1} : {currentQuestion.question}
                 </p>

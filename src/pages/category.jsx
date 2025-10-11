@@ -120,13 +120,13 @@ function CategoryContent() {
     const navigate = useNavigate();
 
     return (
-        <div className="flex flex-col justify-center items-center gap-6 pt-14 pb-8 w-full h-full font-poppins
+        <div className="flex flex-col justify-center items-center c:gap-6 d:gap-2 pt-14 pb-8 w-full h-full font-poppins
         text-stone-800 dark:text-white">
             <h1 data-aos="fade-down" className="font-bold text-center mt-8 mb-4 border-stone-800 dark:border-white/30
             border-b-2 w-[75%] e:text-6xl a:text-[50px] b:text-[40px] d:text-[35px] d:px-4 a:pb-8 d:pb-4">Choose Quiz Category</h1>
 
             <div className="pb-10 px-5 mb-12 flex-wrap flex justify-center flex-row min-[500px]:gap-6 max-[500px]:gap-4
-            a:pt-5 b:pt-5 d:pt-8">
+            b:pt-5 d:pt-3">
                 {array.map((arr, idx) => (
                     <div className="flex flex-col justify-center border-2 py-5 px-5 rounded-lg min-[1250px]:w-96 max-[1250px]:w-80
                     max-[1050px]:w-96 max-[850px]:w-80 max-[700px]:w-full
