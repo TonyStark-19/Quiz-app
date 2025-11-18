@@ -8,11 +8,17 @@ The project ensures a great user experience, supporting both light and dark them
 
 ## 📸 Screenshots
 
-### 🏠 Home Page Dark 
-![Home Page](/public/images/image1.png)
+| 🏠 Home Page Dark  | 🏠 Home Page Light |
+|------------|------------|
+| ![Screenshot 1](/public/images/image1.png) | ![Screenshot 2](/public/images/image2.png) |
 
-### 🏠 Home Page Light
-![Home Page](/public/images/image2.png)
+| 🏷️ Category Page Dark | 🏷️ Category Page Light |
+|------------|------------|
+| ![Screenshot 3](/public/images/image3.png) | ![Screenshot 4](/public/images/image4.png) |
+
+| ❓ Quiz Page Dark | ❓ Quiz Page Light |
+|------------|------------|
+| ![Screenshot 3](/public/images/image5.png) | ![Screenshot 4](/public/images/image6.png) |
 
 ---
 
