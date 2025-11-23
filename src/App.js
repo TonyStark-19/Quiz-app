@@ -10,7 +10,6 @@ import QuizPage from './pages/quizpage';
 import ScrollToTop from './Components/ScrollToTop';
 
 // main app
-
 export default function App() {
   return (
     <Router>

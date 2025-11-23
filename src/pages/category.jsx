@@ -13,10 +13,12 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
 // react icons
-import { FaCode, FaHtml5, FaCss3Alt, FaBootstrap, FaGithub } from "react-icons/fa";
+import { FaCode, FaHtml5, FaCss3Alt, FaBootstrap, FaGithub, FaNodeJs, FaJava, FaPython } from "react-icons/fa";
 import { TbBrandCpp } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { SiExpress, SiMongodb } from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
 
 // category page
 export default function CategoryPage() {
@@ -111,6 +113,48 @@ const array = [
         info: "10 Questions | CLI + GitHub Basics",
         icon: <FaGithub />,
         color: "text-gray-700"
+    },
+    {
+        title: "Node.js",
+        description: "Test your backend basics — event loop, modules, async JS, and server-side logic",
+        info: "12 Questions | Backend Fundamentals",
+        icon: <FaNodeJs />,
+        color: "text-green-600"
+    },
+    {
+        title: "Express.js",
+        description: "Routers, middleware, APIs, and server creation — evaluate your Express.js knowledge",
+        info: "10 Questions | API Focused",
+        icon: <SiExpress />,
+        color: "text-gray-800"
+    },
+    {
+        title: "MongoDB",
+        description: "Strengthen your NoSQL understanding — documents, collections, aggregation, and queries",
+        info: "12 Questions | Database Focused",
+        icon: <SiMongodb />,
+        color: "text-green-500"
+    },
+    {
+        title: "Java",
+        description: "Test your understanding of OOP, JVM, collections, and core Java concepts",
+        info: "15 Questions | Intermediate Level",
+        icon: <FaJava />,
+        color: "text-orange-700"
+    },
+    {
+        title: "Python",
+        description: "Variables, lists, loops, OOP, and problem-solving — evaluate your Python fundamentals",
+        info: "12 Questions | Beginner to Intermediate",
+        icon: <FaPython />,
+        color: "text-blue-400"
+    },
+    {
+        title: "SQL",
+        description: "Queries, joins, constraints, normalization — master the essentials of relational databases",
+        info: "15 Questions | Query Based",
+        icon: <GrMysql />,
+        color: "text-cyan-700"
     }
 ]
 
@@ -142,7 +186,7 @@ function CategoryContent() {
                         <button
                             className="rounded-md p-1.5 mt-3
                             bg-stone-600 dark:bg-gray-800 hover:bg-stone-700 dark:hover:bg-gray-900 text-white"
-                            onClick={() => navigate(`/quiz/${arr.title.split(" ")[0].toLowerCase()}`)}
+                            onClick={() => navigate(`/quiz/${arr.title.toLowerCase().replace(/[^a-z0-9]/g, "")}`)}
                         >
                             Start Quiz
                         </button>

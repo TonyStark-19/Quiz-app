@@ -101,7 +101,12 @@ function Quiz({ showResult, setShowResult }) {
         react: "React.js",
         javascript: "JavaScript",
         html: "HTML",
-        css: "CSS"
+        nodejs: "Node.js",
+        expressjs: "Express.js",
+        mongodb: "MongoDB",
+        sql: "SQL",
+        python: "Python",
+        java: "Java",
     };
 
     // 🧾 SHOW RESULTS + REVIEW SECTION

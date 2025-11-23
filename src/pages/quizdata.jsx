@@ -773,5 +773,385 @@ export const quizData = {
             options: ["git push", "git pull", "git fetch", "git clone"],
             answer: "git pull"
         }
+    ],
+
+    // node.js
+    nodejs: [
+        {
+            question: "What is Node.js primarily used for?",
+            options: [
+                "Building mobile apps",
+                "Running JavaScript on the server",
+                "Designing user interfaces",
+                "Managing SQL databases"
+            ],
+            answer: "Running JavaScript on the server"
+        },
+        {
+            question: "Which engine powers Node.js?",
+            options: ["SpiderMonkey", "Chakra", "V8", "Nitro"],
+            answer: "V8"
+        },
+        {
+            question: "What does `npm` stand for?",
+            options: [
+                "Node Program Manager",
+                "Node Package Manager",
+                "New Project Manager",
+                "Network Package Module"
+            ],
+            answer: "Node Package Manager"
+        },
+        {
+            question: "Which module is used to create a server in Node.js?",
+            options: ["http", "fs", "path", "events"],
+            answer: "http"
+        },
+        {
+            question: "Which method is used to import modules in Node.js (CommonJS)?",
+            options: ["import", "include", "require()", "load"],
+            answer: "require()"
+        },
+        {
+            question: "Which command initializes a Node project?",
+            options: ["node init", "npm start", "npm init", "node new"],
+            answer: "npm init"
+        },
+        {
+            question: "What type of architecture does Node.js follow?",
+            options: [
+                "Multi-threaded",
+                "Blocking I/O",
+                "Event-driven, non-blocking",
+                "Sequential processing"
+            ],
+            answer: "Event-driven, non-blocking"
+        },
+        {
+            question: "Which module handles file operations in Node.js?",
+            options: ["os", "path", "fs", "events"],
+            answer: "fs"
+        },
+        {
+            question: "Which command runs a JavaScript file in Node?",
+            options: ["node run file.js", "npm start file.js", "node file.js", "runjs file.js"],
+            answer: "node file.js"
+        },
+        {
+            question: "What does `package.json` store?",
+            options: [
+                "Project database",
+                "Project dependencies and metadata",
+                "HTML templates",
+                "Compiled code"
+            ],
+            answer: "Project dependencies and metadata"
+        }
+    ],
+
+    // express.js
+    expressjs: [
+        {
+            question: "What is Express.js?",
+            options: [
+                "Frontend library",
+                "CSS framework",
+                "Minimal Node.js web framework",
+                "Database engine"
+            ],
+            answer: "Minimal Node.js web framework"
+        },
+        {
+            question: "Which method is used to create an Express app?",
+            options: ["express.app()", "new Express()", "express()", "createExpress()"],
+            answer: "express()"
+        },
+        {
+            question: "Which function handles routing in Express?",
+            options: ["app.route()", "app.get()", "app.use()", "app.listen()"],
+            answer: "app.get()"
+        },
+        {
+            question: "What does `app.use()` do?",
+            options: [
+                "Registers middleware",
+                "Starts the server",
+                "Defines a route",
+                "Connects to database"
+            ],
+            answer: "Registers middleware"
+        },
+        {
+            question: "How do you start a server in Express?",
+            options: ["app.run()", "app.start()", "app.listen()", "app.server()"],
+            answer: "app.listen()"
+        },
+        {
+            question: "Which HTTP method is used for sending data?",
+            options: ["GET", "POST", "DELETE", "HEAD"],
+            answer: "POST"
+        },
+        {
+            question: "Middleware functions must have how many parameters?",
+            options: ["1", "2", "3", "More than one"],
+            answer: "3"
+        },
+        {
+            question: "Which middleware parses JSON body?",
+            options: ["express.body()", "express.urlencoded()", "express.json()", "json.parse()"],
+            answer: "express.json()"
+        },
+        {
+            question: "Which status code means 'Not Found'?",
+            options: ["400", "500", "200", "404"],
+            answer: "404"
+        },
+        {
+            question: "Where are route handlers defined?",
+            options: ["app.html", "app.css", "app.get/app.post", "server.config"],
+            answer: "app.get/app.post"
+        }
+    ],
+
+    // mongo db
+    mongodb: [
+        {
+            question: "MongoDB is a ____ database.",
+            options: ["Relational", "Graph", "Document-based NoSQL", "Columnar"],
+            answer: "Document-based NoSQL"
+        },
+        {
+            question: "Which command shows all databases?",
+            options: ["show all", "list dbs", "show dbs", "db.list"],
+            answer: "show dbs"
+        },
+        {
+            question: "MongoDB stores data in?",
+            options: ["Tables", "Docs", "Documents (BSON)", "Rows"],
+            answer: "Documents (BSON)"
+        },
+        {
+            question: "Which operator filters documents?",
+            options: ["find()", "filter()", "search()", "query()"],
+            answer: "find()"
+        },
+        {
+            question: "Which command inserts one document?",
+            options: ["insert()", "insertOne()", "pushOne()", "addDoc()"],
+            answer: "insertOne()"
+        },
+        {
+            question: "Default MongoDB port is?",
+            options: ["3000", "8000", "27017", "5000"],
+            answer: "27017"
+        },
+        {
+            question: "Which method updates a document?",
+            options: ["update()", "changeOne()", "modify()", "edit()"],
+            answer: "update()"
+        },
+        {
+            question: "What is a MongoDB collection?",
+            options: ["Set of rows", "Set of fields", "Group of documents", "Group of tables"],
+            answer: "Group of documents"
+        },
+        {
+            question: "Which method deletes one document?",
+            options: ["deleteOne()", "remove()", "drop()", "delete()"],
+            answer: "deleteOne()"
+        },
+        {
+            question: "Which aggregation operator groups data?",
+            options: ["$match", "$group", "$sort", "$filter"],
+            answer: "$group"
+        }
+    ],
+
+    // java
+    java: [
+        {
+            question: "Java is a ____ language.",
+            options: ["Procedural", "Object-oriented", "Markup", "Shell"],
+            answer: "Object-oriented"
+        },
+        {
+            question: "Which of the following is the JVM responsible for?",
+            options: [
+                "Compiling Java code",
+                "Executing bytecode",
+                "Writing Java syntax",
+                "Managing HTML"
+            ],
+            answer: "Executing bytecode"
+        },
+        {
+            question: "Which keyword creates an object?",
+            options: ["object", "init", "new", "create"],
+            answer: "new"
+        },
+        {
+            question: "Which method is the entry point in Java?",
+            options: [
+                "main()",
+                "start()",
+                "execute()",
+                "program()"
+            ],
+            answer: "main()"
+        },
+        {
+            question: "Which collection allows duplicate values?",
+            options: ["Set", "Map", "List", "TreeSet"],
+            answer: "List"
+        },
+        {
+            question: "Which keyword is used for inheritance?",
+            options: ["extends", "inherits", "super", "derive"],
+            answer: "extends"
+        },
+        {
+            question: "Which data type is used for decimal numbers?",
+            options: ["int", "double", "char", "boolean"],
+            answer: "double"
+        },
+        {
+            question: "Which concept binds data and methods together?",
+            options: ["Abstraction", "Polymorphism", "Encapsulation", "Inheritance"],
+            answer: "Encapsulation"
+        },
+        {
+            question: "Which keyword prevents inheritance?",
+            options: ["static", "final", "private", "protected"],
+            answer: "final"
+        },
+        {
+            question: "Which exception is unchecked?",
+            options: ["IOException", "SQLException", "NullPointerException", "FileNotFound"],
+            answer: "NullPointerException"
+        }
+    ],
+
+    // python
+    python: [
+        {
+            question: "Python was created by?",
+            options: ["James Gosling", "Brendan Eich", "Guido van Rossum", "Ken Thompson"],
+            answer: "Guido van Rossum"
+        },
+        {
+            question: "What is the correct extension for Python files?",
+            options: [".py", ".pt", ".pyt", ".python"],
+            answer: ".py"
+        },
+        {
+            question: "Which data type is immutable?",
+            options: ["List", "Dictionary", "Tuple", "Set"],
+            answer: "Tuple"
+        },
+        {
+            question: "Which keyword defines a function?",
+            options: ["function", "def", "func", "method"],
+            answer: "def"
+        },
+        {
+            question: "What does `len()` return?",
+            options: ["Memory size", "Length of object", "Type of object", "ID of object"],
+            answer: "Length of object"
+        },
+        {
+            question: "Which operator is used for exponent?",
+            options: ["^", "**", "exp", "^^"],
+            answer: "**"
+        },
+        {
+            question: "Which library is used for data analysis?",
+            options: ["numpy", "matplotlib", "pandas", "requests"],
+            answer: "pandas"
+        },
+        {
+            question: "Which of these is a loop in Python?",
+            options: ["repeat", "iterate", "for", "each"],
+            answer: "for"
+        },
+        {
+            question: "Which keyword handles exceptions?",
+            options: ["try", "catch", "error", "except"],
+            answer: "try"
+        },
+        {
+            question: "What is a correct way to create a list?",
+            options: ["[]", "()", "{}", "<>"],
+            answer: "[]"
+        }
+    ],
+
+    // sql
+    sql: [
+        {
+            question: "SQL stands for?",
+            options: [
+                "Structured Query Language",
+                "Sequential Query Logic",
+                "Standard Question Language",
+                "Server Query List"
+            ],
+            answer: "Structured Query Language"
+        },
+        {
+            question: "Which command retrieves data?",
+            options: ["FETCH", "SELECT", "TAKE", "RETRIEVE"],
+            answer: "SELECT"
+        },
+        {
+            question: "Which clause filters rows?",
+            options: ["ORDER BY", "GROUP BY", "WHERE", "FROM"],
+            answer: "WHERE"
+        },
+        {
+            question: "Which SQL command inserts data?",
+            options: ["INSERT INTO", "ADD ROW", "PUT", "ADD DATA"],
+            answer: "INSERT INTO"
+        },
+        {
+            question: "Which joins return all rows from both tables?",
+            options: [
+                "LEFT JOIN",
+                "RIGHT JOIN",
+                "FULL JOIN",
+                "INNER JOIN"
+            ],
+            answer: "FULL JOIN"
+        }
+        ,
+        {
+            question: "What does PRIMARY KEY ensure?",
+            options: [
+                "Unique + Not Null",
+                "Null allowed",
+                "Only unique",
+                "Only not null"
+            ],
+            answer: "Unique + Not Null"
+        },
+        {
+            question: "Which SQL clause sorts data?",
+            options: ["SORT BY", "ORDER BY", "ARRANGE BY", "GROUP BY"],
+            answer: "ORDER BY"
+        },
+        {
+            question: "Which command deletes rows?",
+            options: ["DEL", "REMOVE", "DELETE", "DROP"],
+            answer: "DELETE"
+        },
+        {
+            question: "Which aggregate function counts rows?",
+            options: ["SUM()", "COUNT()", "SIZE()", "TOTAL()"],
+            answer: "COUNT()"
+        },
+        {
+            question: "Which key is used to relate two tables?",
+            options: ["Super Key", "Foreign Key", "Primary Key", "Unique Key"],
+            answer: "Foreign Key"
+        }
     ]
 };
