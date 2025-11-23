@@ -1,8 +1,62 @@
 # 🧠 React Quiz App
 
+![Repo Size](https://img.shields.io/github/repo-size/TonyStark-19/Quiz-app?color=yellow)
+![Stars](https://img.shields.io/github/stars/TonyStark-19/Quiz-app?color=blue)
+![Forks](https://img.shields.io/github/forks/TonyStark-19/Quiz-app?color=blueviolet)
+![Last Commit](https://img.shields.io/github/last-commit/TonyStark-19/Quiz-app?color=brightgreen)
+
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwindcss&logoColor=white)
+![AOS](https://img.shields.io/badge/Library-AOS-blueviolet)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)
+
 Welcome to the React **Quiz App**, a dynamic and **responsive** quiz platform built using **React** and **Tailwind CSS**. It allows users to test their knowledge across multiple categories with smooth transitions, score tracking, and now — a review section to check correct and incorrect answers after completing the quiz.
 
 The project ensures a great user experience, supporting both light and dark themes along with automatic scroll-to-top on every route change or navigation.
+
+---
+
+## 📚 Quiz Available For:
+
+Your quiz app currently supports the following topics:
+
+![C](https://img.shields.io/badge/C-00599C?logo=c&logoColor=white)
+![C++](https://img.shields.io/badge/C++-044F88?logo=c%2B%2B&logoColor=white)
+![Java](https://img.shields.io/badge/Java-007396?logo=oracle&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![HTML](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white)
+![ReactJS](https://img.shields.io/badge/ReactJS-61DAFB?logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-38B2AC?logo=tailwindcss&logoColor=white)
+![NodeJS](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
+![ExpressJS](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
+
+### Programming Languages
+
+- 🟦 C
+- 🟨 C++
+- 🟧 Java
+- 🟩 Python
+- 🟨 JavaScript
+
+### Web Development
+
+- ⚛️ React.js
+- 🌐 HTML
+- 🎨 CSS
+- 🟦 Tailwind CSS
+- ⚙️ Node.js
+- 🚏 Express.js
+
+### DevOps & Tools
+
+- 🗂️ Git
+- 🐙 GitHub
 
 ---
 
