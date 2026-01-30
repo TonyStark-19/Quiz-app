@@ -1,5 +1,5 @@
-// import use params and link
-import { useParams, Link } from 'react-router-dom';
+// import use params
+import { useParams } from 'react-router-dom';
 
 // import use state
 import { useState, useEffect } from 'react';
@@ -11,33 +11,34 @@ import 'aos/dist/aos.css';
 // import quizdata
 import { quizData } from './quizdata';
 
-// import Navbar and footer
+// import components
 import { Navbar } from '../Components/Navbar';
 import { Footer } from '../Components/Footer';
+import ResultView from '../Components/ResultView';
 
 // quiz page
 export default function QuizPage() {
-
-    // AOS animations
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    }, []);
-
-    // Show result
     const [showResult, setShowResult] = useState(false);
 
+    useEffect(() => {
+        AOS.init({ duration: 800, once: true });
+    }, []);
+
     return (
-        <div className="min-h-screen w-full relative
-            bg-[radial-gradient(125%_125%_at_50%_80%,#ffffff_40%,#f59e0b_100%)]
-            dark:bg-[radial-gradient(ellipse_90%_90%_at_50%_0%,rgba(120,180,255,0.25)_0%,transparent_70%)] dark:bg-black">
-            <Navbar disableNav={!showResult} />
-            <Quiz showResult={showResult} setShowResult={setShowResult} />
-            <div className="pt-10">
-                <Footer />
+        <div className="min-h-screen flex flex-col bg-white dark:bg-[#030712] transition-colors duration-500 overflow-x-hidden">
+            {/* Background Orbs */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-amber-100/30 dark:bg-indigo-950/20 blur-[120px]" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-orange-100/30 dark:bg-purple-950/20 blur-[120px]" />
             </div>
+
+            <Navbar disableNav={!showResult} />
+
+            <main className="flex-grow pt-28 pb-12 px-4 relative z-10 flex flex-col items-center">
+                <Quiz showResult={showResult} setShowResult={setShowResult} />
+            </main>
+
+            <Footer />
         </div>
     )
 }
@@ -49,37 +50,21 @@ function Quiz({ showResult, setShowResult }) {
     const [current, setCurrent] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
     const [score, setScore] = useState(0);
-
-    // store user's answers
     const [answers, setAnswers] = useState([]);
-
-    // show review answers
     const [showReview, setShowReview] = useState(false);
 
-    // if category is incorrect
-    if (!questions) {
-        return <div className="p-10 text-red-600 text-2xl">Category not found</div>;
-    }
+    if (!questions) return <div className="p-10 text-red-500 font-bold text-center">Category not found</div>;
 
-    // to handle selected options
-    const handleOptionSelect = (index) => {
-        setSelectedOption(index);
-    };
+    const progress = ((current + 1) / questions.length) * 100;
 
-    // handle next question
     const handleNext = () => {
         const isCorrect = questions[current].options[selectedOption] === questions[current].answer;
-
-        // 🆕 store selected answer & correctness
-        setAnswers(prev => [
-            ...prev,
-            {
-                question: questions[current].question,
-                selected: questions[current].options[selectedOption],
-                correct: questions[current].answer,
-                isCorrect
-            }
-        ]);
+        setAnswers(prev => [...prev, {
+            question: questions[current].question,
+            selected: questions[current].options[selectedOption],
+            correct: questions[current].answer,
+            isCorrect
+        }]);
 
         if (isCorrect) setScore(prev => prev + 1);
 
@@ -91,185 +76,77 @@ function Quiz({ showResult, setShowResult }) {
         }
     };
 
-    // map short category keys to full names
-    const categoryNames = {
-        C: "C language",
-        oops: "Oops concept",
-        bootstrap: "Bootstrap css",
-        tailwind: "Tailwind CSS",
-        git: "Git & GitHub",
-        react: "React.js",
-        javascript: "JavaScript",
-        html: "HTML",
-        nodejs: "Node.js",
-        expressjs: "Express.js",
-        mongodb: "MongoDB",
-        sql: "SQL",
-        python: "Python",
-        java: "Java",
-    };
-
-    // 🧾 SHOW RESULTS + REVIEW SECTION
     if (showResult) {
-        return (
-            <div className="text-center flex justify-center items-center min-h-screen text-stone-800 dark:text-white">
-                <div className='flex justify-center items-center flex-col max-w-3xl w-full px-5'>
-
-                    {/* ✅ Only show result summary when review is NOT visible */}
-                    {!showReview && (
-                        <div
-                            className="w-full flex justify-center items-center flex-col mt-[-100px]"
-                        >
-                            <h1 className="font-bold capitalize c:text-5xl c:mb-6 d:text-4xl d:mb-4" data-aos="fade-down">
-                                {categoryNames[category] || category} Quiz
-                            </h1>
-
-                            <p className="c:text-2xl d:text-xl" data-aos="fade-up">🎉 Quiz Completed!</p>
-
-                            <p className="text-xl c:mt-4 d:mt-3" data-aos="fade-up" data-aos-delay="200">
-                                Your Score: <span className="font-semibold text-orange-400">{score}</span> / {questions.length}
-                            </p>
-
-                            <p className="text-xl text-stone-800 dark:text-white 
-                                c:max-w-lg c:w-full c:mt-6 d:mt-4 d:max-w-sm"
-                                data-aos="fade-in" data-aos-delay="400">
-                                {score === questions.length
-                                    ? "Excellent! You nailed it! 🏆"
-                                    : score >= questions.length / 2
-                                        ? "Great effort! Keep practicing. 💪"
-                                        : "Don't worry! Try again to improve your score. 🚀"}
-                            </p>
-
-                            {/* ✅ Buttons for retry, more quiz, and review toggle */}
-                            <div className="mt-8 flex flex-wrap justify-center gap-4" data-aos="zoom-in" data-aos-delay="600">
-                                <button
-                                    onClick={() => window.location.reload()}
-                                    className="bg-orange-600 hover:bg-orange-700 text-white rounded-md c:px-6 c:py-2 d:px-3 d:py-2"
-                                >
-                                    Retry Quiz
-                                </button>
-
-                                <Link to="/pages/category">
-                                    <button
-                                        className="bg-gray-700 hover:bg-gray-600 text-white rounded-md c:px-6 c:py-2 d:px-3 d:py-2"
-                                    >
-                                        Take more quiz
-                                    </button>
-                                </Link>
-
-                                <button
-                                    onClick={() => setShowReview(true)}
-                                    className="bg-blue-600 hover:bg-blue-700 text-white rounded-md c:px-6 c:py-2 d:px-3 d:py-2"
-                                >
-                                    Show Review Answers
-                                </button>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* ✅ Review Section */}
-                    {showReview && (
-                        <div
-                            className="mt-10 text-left w-full pt-10"
-                            data-aos="fade-up"
-                            data-aos-delay="200"
-                        >
-                            <h2 className="a:text-4xl d:text-[28px] text-center font-semibold mb-5 a:pb-5 d:pb-3 border-b-2 border-stone-600 dark:border-white/30">📝 Review Answers</h2>
-
-                            <div className='flex justify-center items-center flex-col'>
-                                {answers.map((ans, index) => (
-                                    <div
-                                        key={index}
-                                        className="mb-5 bg-white/10 p-4 rounded-lg border border-stone-600 dark:border-gray-700 a:w-[850px] d:w-full"
-                                    >
-                                        <p className="font-semibold mb-2">
-                                            Q{index + 1}. {ans.question}
-                                        </p>
-                                        <p
-                                            className={`mb-1 ${ans.isCorrect ? "text-green-500" : "text-red-500"}`}
-                                        >
-                                            Your Answer: {ans.selected}
-                                        </p>
-                                        {!ans.isCorrect && (
-                                            <p className="text-blue-400">
-                                                Correct Answer: {ans.correct}
-                                            </p>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* 🆕 Buttons inside review section */}
-                            <div className="mt-4 mb-10 flex flex-wrap justify-center gap-4">
-                                <button
-                                    onClick={() => window.location.reload()}
-                                    className="bg-orange-600 hover:bg-orange-700 text-white rounded-md c:px-6 c:py-2 d:px-3 d:py-2"
-                                >
-                                    Retry Quiz
-                                </button>
-
-                                <Link to="/pages/category">
-                                    <button
-                                        className="bg-gray-700 hover:bg-gray-600 text-white rounded-md c:px-6 c:py-2 d:px-3 d:py-2"
-                                    >
-                                        Take more quiz
-                                    </button>
-                                </Link>
-
-                                <button
-                                    onClick={() => setShowReview(false)}
-                                    className="bg-blue-600 hover:bg-blue-700 text-white rounded-md c:px-6 c:py-2 d:px-3 d:py-2"
-                                >
-                                    Hide Review
-                                </button>
-                            </div>
-                        </div>
-                    )}
-                </div>
-            </div>
-        );
+        return <ResultView
+            score={score}
+            total={questions.length}
+            answers={answers}
+            showReview={showReview}
+            setShowReview={setShowReview}
+        />;
     }
 
-    // tracking current question
-    const currentQuestion = questions[current];
-
     return (
-        <div className="a:pt-20 d:pt-16 c:px-5 px-2.5 flex items-center flex-col min-h-screen text-stone-800 dark:text-white">
-            <h1 data-aos="fade-down" className="font-bold capitalize border-stone-800 dark:border-white/30 border-b-2
-            e:w-[50%] d:w-[80%] text-center e:pb-8 d:pb-4 c:mb-10 e:text-5xl b:text-[40px] d:text-[35px] d:mb-8">
-                {categoryNames[category] || category} Quiz</h1>
+        <div className="w-full max-w-3xl" data-aos="fade-up">
+            {/* Progress Header */}
+            <div className="mb-8 space-y-4">
+                <div className="flex justify-between items-end">
+                    <div>
+                        <h2 className="text-sm uppercase tracking-widest font-bold text-stone-500 dark:text-gray-500">
+                            {category} Challenge
+                        </h2>
+                        <h1 className="text-2xl md:text-3xl font-black text-stone-900 dark:text-white">
+                            Question {current + 1} <span className="text-stone-400 font-medium">/ {questions.length}</span>
+                        </h1>
+                    </div>
+                    <div className="text-right">
+                        <span className="text-2xl font-black text-amber-500 dark:text-indigo-400">{Math.round(progress)}%</span>
+                    </div>
+                </div>
+                <div className="h-2 w-full bg-stone-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                    <div
+                        className="h-full bg-gradient-to-r from-amber-500 to-orange-600 dark:from-indigo-500 dark:to-cyan-400 transition-all duration-500"
+                        style={{ width: `${progress}%` }}
+                    />
+                </div>
+            </div>
 
-            <div data-aos="fade-up" className="border-2 border-stone-800 dark:border-white/30 dark:border-white rounded-lg
-                e:w-[60%] a:w-[80%] b:w-[85%] d:w-[100%] a:py-5 a:px-6 d:py-4 d:px-5">
-                <p className="mb-4 font-semibold b:text-2xl d:text-xl">
-                    Q {current + 1} : {currentQuestion.question}
+            {/* Question Card */}
+            <div className="p-8 md:p-10 rounded-[2rem] bg-white dark:bg-gray-900/40 border border-stone-200 dark:border-gray-800 shadow-xl
+            shadow-stone-200/50 dark:shadow-none backdrop-blur-md">
+                <p className="text-xl md:text-2xl font-bold text-stone-800 dark:text-white mb-8 leading-relaxed">
+                    {questions[current].question}
                 </p>
 
-                {currentQuestion.options.map((opt, i) => (
-                    <div key={i} className="tracking-wide mb-3">
-                        <label className="cursor-pointer rounded-md flex items-center bg-stone-600 dark:bg-gray-800
-                        text-white dark:text-white dark:hover:bg-gray-800/70 hover:bg-stone-700
-                        c:p-3 c:pl-5 d:p-2 d:pl-4 c:text-xl max-c:text-[18px]">
-                            <input
-                                type="radio"
-                                name={`q${current}`}
-                                checked={selectedOption === i}
-                                onChange={() => handleOptionSelect(i)}
-                                className="mr-3 mt-1 cursor-pointer accent-orange-300 dark:accent-orange-500
-                                c:scale-125 d:scale-100"
-                            />
-                            {opt}
-                        </label>
-                    </div>
-                ))}
+                <div className="space-y-3">
+                    {questions[current].options.map((opt, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setSelectedOption(i)}
+                            className={`w-full text-left p-5 rounded-2xl border-2 transition-all duration-200 flex items-center justify-between group
+                                ${selectedOption === i
+                                    ? "border-amber-500 bg-amber-50/50 dark:border-indigo-500 dark:bg-indigo-500/10 text-stone-900 dark:text-white"
+                                    : "border-stone-100 dark:border-gray-800 hover:border-stone-300 dark:hover:border-gray-700 text-stone-600 dark:text-gray-400"
+                                }`}
+                        >
+                            <span className="font-semibold text-lg">{opt}</span>
+                            <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors
+                                ${selectedOption === i ? "border-amber-500 dark:border-indigo-500 bg-amber-500 dark:bg-indigo-500"
+                                    : "border-stone-300 dark:border-gray-600"}`}>
+                                {selectedOption === i && <div className="w-2 h-2 rounded-full bg-white" />}
+                            </div>
+                        </button>
+                    ))}
+                </div>
 
                 <button
                     onClick={handleNext}
                     disabled={selectedOption === null}
-                    className="mt-2 px-4 py-2 w-full cursor-pointer uppercase
-                    bg-orange-600 text-white rounded-md hover:bg-orange-700 disabled:opacity-50"
+                    className="mt-10 w-full py-4 rounded-2xl font-black text-lg uppercase tracking-widest transition-all
+                        bg-stone-900 dark:bg-white text-white dark:text-black
+                        hover:scale-[1.02] active:scale-95 disabled:opacity-30 disabled:hover:scale-100 shadow-lg"
                 >
-                    {current === questions.length - 1 ? "Finish" : "Next"}
+                    {current === questions.length - 1 ? "Finish Quiz" : "Next Question"}
                 </button>
             </div>
         </div>

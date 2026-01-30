@@ -1,9 +1,7 @@
 // import Navbar and footer
 import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
-
-// import use navigate
-import { useNavigate } from "react-router-dom";
+import CategoryCard from "../Components/CategoryCard";
 
 // AOS animations
 import AOS from 'aos';
@@ -12,7 +10,7 @@ import 'aos/dist/aos.css';
 // import use effect
 import { useEffect } from 'react';
 
-// react icons
+// import icons
 import { FaCode, FaHtml5, FaCss3Alt, FaBootstrap, FaGithub, FaNodeJs, FaJava, FaPython } from "react-icons/fa";
 import { TbBrandCpp } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -20,30 +18,8 @@ import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 
-// category page
-export default function CategoryPage() {
-
-    // AOS animations
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    }, []);
-
-    return (
-        <div className="min-h-screen w-full relative
-            bg-[radial-gradient(125%_125%_at_50%_77%,#ffffff_40%,#f59e0b_100%)]
-            dark:bg-[radial-gradient(ellipse_90%_90%_at_50%_0%,rgba(120,180,255,0.25)_0%,transparent_70%)] dark:bg-black">
-            <Navbar />
-            <CategoryContent />
-            <Footer />
-        </div>
-    )
-}
-
 // array for box content
-const array = [
+const categories = [
     {
         title: "C Language",
         description: "Strengthen your understanding of the foundational programming language. Pointers, loops, arrays — master the building blocks.",
@@ -156,43 +132,45 @@ const array = [
         icon: <GrMysql />,
         color: "text-cyan-700"
     }
-]
+];
 
-// category page content
-function CategoryContent() {
-    // use navigate for quiz page navigation
-    const navigate = useNavigate();
+// category page
+export default function CategoryPage() {
+    useEffect(() => {
+        AOS.init({ duration: 800, once: true });
+    }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center c:gap-6 d:gap-2 pt-14 pb-8 w-full h-full font-poppins
-        text-stone-800 dark:text-white">
-            <h1 data-aos="fade-down" className="font-bold text-center mt-8 mb-4 border-stone-800 dark:border-white/30
-            border-b-2 w-[75%] e:text-6xl a:text-[50px] b:text-[40px] d:text-[35px] d:px-4 a:pb-8 d:pb-4">Choose Quiz Category</h1>
-
-            <div className="pb-10 px-5 mb-12 flex-wrap flex justify-center flex-row min-[500px]:gap-6 max-[500px]:gap-4
-            b:pt-5 d:pt-3">
-                {array.map((arr, idx) => (
-                    <div className="flex flex-col justify-center border-2 py-5 px-5 rounded-lg min-[1250px]:w-96 max-[1250px]:w-80
-                    max-[1050px]:w-96 max-[850px]:w-80 max-[700px]:w-full
-                    border-stone-600 dark:border-gray-500 text-stone-800 dark:text-white" key={idx} data-aos="fade-up">
-                        <h2 className="text-[22px] font-bold flex flex-row gap-3 mb-2 items-center">{arr.title}
-                            <div className={arr.color}>{arr.icon}</div>
-                        </h2>
-
-                        <h4 className="min-[500px]:mt-2.5 max-[500px]:mt-2 tracking-wide mb-2">{arr.description}</h4>
-
-                        <p className="min-[500px]:mt-2.5 max-[500px]:mt-2 tracking-wide mb-1">{arr.info}</p>
-
-                        <button
-                            className="rounded-md p-1.5 mt-3
-                            bg-stone-600 dark:bg-gray-800 hover:bg-stone-700 dark:hover:bg-gray-900 text-white"
-                            onClick={() => navigate(`/quiz/${arr.title.toLowerCase().replace(/[^a-z0-9]/g, "")}`)}
-                        >
-                            Start Quiz
-                        </button>
-                    </div>
-                ))}
+        <div className="min-h-screen flex flex-col bg-white dark:bg-[#030712] transition-colors duration-500">
+            {/* Background Orbs to match Home Page */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[20%] right-[-5%] w-[30%] h-[30%] rounded-full bg-amber-100/40 dark:bg-indigo-950/20 blur-[100px]" />
+                <div className="absolute bottom-[10%] left-[-5%] w-[30%] h-[30%] rounded-full bg-orange-100/40 dark:bg-purple-950/20 blur-[100px]" />
             </div>
+
+            <Navbar />
+
+            <main className="flex-grow pt-32 pb-20 px-6 relative z-10">
+                <div className="max-w-7xl mx-auto">
+                    <header className="mb-16 text-center" data-aos="fade-down">
+                        <h1 className="text-4xl md:text-6xl font-black text-stone-900 dark:text-white mb-4">
+                            Select Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600
+                            dark:from-indigo-400 dark:to-cyan-400">Challenge</span>
+                        </h1>
+                        <p className="text-stone-500 dark:text-gray-400 max-w-xl mx-auto">
+                            Pick a category to test your skills. Each quiz is designed to simulate real-world interview questions.
+                        </p>
+                    </header>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {categories.map((item, idx) => (
+                            <CategoryCard key={idx} item={item} delay={idx * 50} />
+                        ))}
+                    </div>
+                </div>
+            </main>
+
+            <Footer />
         </div>
-    )
+    );
 }
