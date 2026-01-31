@@ -21,7 +21,8 @@ export default function QuizPage() {
     const [showResult, setShowResult] = useState(false);
 
     useEffect(() => {
-        AOS.init({ duration: 800, once: true });
+        // Reduced duration for a snappier feel
+        AOS.init({ duration: 600, once: true });
     }, []);
 
     return (
@@ -32,9 +33,11 @@ export default function QuizPage() {
                 <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-orange-100/30 dark:bg-purple-950/20 blur-[120px]" />
             </div>
 
+            {/* disable Navbar */}
             <Navbar disableNav={!showResult} />
 
-            <main className="flex-grow pt-28 pb-12 px-4 relative z-10 flex flex-col items-center">
+            {/* Optimized main padding: reduced pt-28 to pt-20 */}
+            <main className="flex-grow pt-20 pb-12 px-4 relative z-10 flex flex-col items-center justify-start md:justify-center">
                 <Quiz showResult={showResult} setShowResult={setShowResult} />
             </main>
 
@@ -53,12 +56,16 @@ function Quiz({ showResult, setShowResult }) {
     const [answers, setAnswers] = useState([]);
     const [showReview, setShowReview] = useState(false);
 
+    // if not found
     if (!questions) return <div className="p-10 text-red-500 font-bold text-center">Category not found</div>;
 
+    // progress
     const progress = ((current + 1) / questions.length) * 100;
 
+    // next question
     const handleNext = () => {
         const isCorrect = questions[current].options[selectedOption] === questions[current].answer;
+
         setAnswers(prev => [...prev, {
             question: questions[current].question,
             selected: questions[current].options[selectedOption],
@@ -76,6 +83,7 @@ function Quiz({ showResult, setShowResult }) {
         }
     };
 
+    // show result
     if (showResult) {
         return <ResultView
             score={score}
@@ -88,19 +96,18 @@ function Quiz({ showResult, setShowResult }) {
 
     return (
         <div className="w-full max-w-3xl" data-aos="fade-up">
-            {/* Progress Header */}
-            <div className="mb-8 space-y-4">
+            <div className="mb-6 mt-8 space-y-3">
                 <div className="flex justify-between items-end">
                     <div>
-                        <h2 className="text-sm uppercase tracking-widest font-bold text-stone-500 dark:text-gray-500">
+                        <h2 className="text-[10px] uppercase tracking-widest font-bold text-stone-500 dark:text-gray-500">
                             {category} Challenge
                         </h2>
-                        <h1 className="text-2xl md:text-3xl font-black text-stone-900 dark:text-white">
-                            Question {current + 1} <span className="text-stone-400 font-medium">/ {questions.length}</span>
+                        <h1 className="text-xl md:text-2xl font-black text-stone-900 dark:text-white">
+                            Question {current + 1} <span className="text-stone-400 font-medium text-lg">/ {questions.length}</span>
                         </h1>
                     </div>
                     <div className="text-right">
-                        <span className="text-2xl font-black text-amber-500 dark:text-indigo-400">{Math.round(progress)}%</span>
+                        <span className="text-xl font-black text-amber-500 dark:text-indigo-400">{Math.round(progress)}%</span>
                     </div>
                 </div>
                 <div className="h-2 w-full bg-stone-100 dark:bg-gray-800 rounded-full overflow-hidden">
@@ -111,10 +118,9 @@ function Quiz({ showResult, setShowResult }) {
                 </div>
             </div>
 
-            {/* Question Card */}
-            <div className="p-8 md:p-10 rounded-[2rem] bg-white dark:bg-gray-900/40 border border-stone-200 dark:border-gray-800 shadow-xl
+            <div className="p-6 md:p-8 rounded-[2rem] bg-white dark:bg-gray-900/40 border border-stone-200 dark:border-gray-800 shadow-xl
             shadow-stone-200/50 dark:shadow-none backdrop-blur-md">
-                <p className="text-xl md:text-2xl font-bold text-stone-800 dark:text-white mb-8 leading-relaxed">
+                <p className="text-lg md:text-xl font-bold text-stone-800 dark:text-white mb-6 leading-relaxed">
                     {questions[current].question}
                 </p>
 
@@ -123,17 +129,17 @@ function Quiz({ showResult, setShowResult }) {
                         <button
                             key={i}
                             onClick={() => setSelectedOption(i)}
-                            className={`w-full text-left p-5 rounded-2xl border-2 transition-all duration-200 flex items-center justify-between group
+                            className={`w-full text-left p-4 rounded-2xl border-2 transition-all duration-200 flex items-center justify-between group
                                 ${selectedOption === i
                                     ? "border-amber-500 bg-amber-50/50 dark:border-indigo-500 dark:bg-indigo-500/10 text-stone-900 dark:text-white"
                                     : "border-stone-100 dark:border-gray-800 hover:border-stone-300 dark:hover:border-gray-700 text-stone-600 dark:text-gray-400"
                                 }`}
                         >
-                            <span className="font-semibold text-lg">{opt}</span>
-                            <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors
+                            <span className="font-semibold text-base md:text-lg">{opt}</span>
+                            <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors
                                 ${selectedOption === i ? "border-amber-500 dark:border-indigo-500 bg-amber-500 dark:bg-indigo-500"
                                     : "border-stone-300 dark:border-gray-600"}`}>
-                                {selectedOption === i && <div className="w-2 h-2 rounded-full bg-white" />}
+                                {selectedOption === i && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
                             </div>
                         </button>
                     ))}
@@ -142,9 +148,9 @@ function Quiz({ showResult, setShowResult }) {
                 <button
                     onClick={handleNext}
                     disabled={selectedOption === null}
-                    className="mt-10 w-full py-4 rounded-2xl font-black text-lg uppercase tracking-widest transition-all
+                    className="mt-8 w-full py-3 rounded-2xl font-black text-lg uppercase tracking-widest transition-all
                         bg-stone-900 dark:bg-white text-white dark:text-black
-                        hover:scale-[1.02] active:scale-95 disabled:opacity-30 disabled:hover:scale-100 shadow-lg"
+                        hover:scale-[1.01] active:scale-95 disabled:opacity-30 disabled:hover:scale-100 shadow-lg"
                 >
                     {current === questions.length - 1 ? "Finish Quiz" : "Next Question"}
                 </button>

@@ -53,7 +53,6 @@ export default function Home() {
 
 // hero content
 function Hero() {
-
     // total topics
     const totalTopics = Object.keys(quizData).length;
     // To get the total number of questions across all categories:
@@ -70,7 +69,7 @@ function Hero() {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
                     </span>
-                    Built with MERN Stack & Tailwind CSS
+                    Interview Mode: 100% Industry-Relevant Questions
                 </div>
 
                 {/* Main Heading */}
@@ -86,10 +85,9 @@ function Hero() {
                     Master the most in-demand technologies with precision-crafted quizzes.
                     From <span className="text-stone-900 dark:text-white font-semibold">React internals</span> to
                     <span className="text-stone-900 dark:text-white font-semibold"> Backend architecture</span>
-                    —test your skills across{totalTopics} specialized categories.
+                    —test your skills across {totalTopics} specialized categories.
                 </p>
 
-                {/* CTA Buttons */}
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
                     data-aos="fade-up" data-aos-delay="300">

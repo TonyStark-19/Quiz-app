@@ -10,6 +10,7 @@ import { FaGithub } from "react-icons/fa";
 
 // Navbar
 export function Navbar({ disableNav }) {
+    // theme toggle
     const [isDark, setIsDark] = useState(() => {
         return localStorage.getItem("theme") === "dark";
     });
@@ -38,7 +39,7 @@ export function Navbar({ disableNav }) {
                 <div className="flex items-center gap-2">
                     {disableNav ? (
                         <div className="flex items-center gap-2 opacity-50 cursor-not-allowed">
-                            <div className="w-8 h-8 bg-amber-500 rounded-lg" />
+                            <div className="w-8 h-8 bg-gradient-to-tr from-amber-500 to-orange-600 dark:from-indigo-500 dark:to-cyan-400 rounded-lg" />
                             <span className="font-bold text-xl tracking-tight text-stone-800 dark:text-white">
                                 Quizify
                             </span>

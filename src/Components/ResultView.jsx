@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // result view
 export default function ResultView({ score, total, answers, showReview, setShowReview }) {
+    // percentage
     const percentage = (score / total) * 100;
 
     return (
@@ -29,15 +30,18 @@ export default function ResultView({ score, total, answers, showReview, setShowR
                     <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
                         <button onClick={() => window.location.reload()} className="px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold
                         rounded-2xl transition-all shadow-lg shadow-amber-200 dark:shadow-none">Retry Quiz</button>
+
                         <button onClick={() => setShowReview(true)} className="px-8 py-4 bg-stone-900 dark:bg-gray-800 text-white font-bold
                         rounded-2xl transition-all">Review Answers</button>
+
                         <Link to="/pages/category" className="px-8 py-4 bg-white dark:bg-transparent border-2 border-stone-200 dark:border-gray-800
-                        text-stone-700 dark:text-gray-300 font-bold rounded-2xl transition-all hover:bg-stone-50 dark:hover:bg-gray-900 text-center">Home</Link>
+                        text-stone-700 dark:text-gray-300 font-bold rounded-2xl transition-all hover:bg-stone-50 dark:hover:bg-gray-900 text-center">
+                            Try More Categories</Link>
                     </div>
                 </div>
             ) : (
                 <div className="space-y-6">
-                    <div className="flex justify-between items-center mb-10">
+                    <div className="flex justify-between items-center my-10">
                         <h2 className="text-3xl font-black text-stone-900 dark:text-white">Review</h2>
                         <button onClick={() => setShowReview(false)} className="text-amber-600 dark:text-indigo-400 font-bold">Back to Summary</button>
                     </div>
@@ -52,6 +56,7 @@ export default function ResultView({ score, total, answers, showReview, setShowR
                                         <span className="text-[10px] uppercase font-black block mb-1">Your Answer</span>
                                         {ans.selected}
                                     </div>
+
                                     {!ans.isCorrect && (
                                         <div className="p-3 rounded-xl border bg-blue-50 border-blue-200 text-blue-700 dark:bg-blue-900/20
                                         dark:border-blue-800 dark:text-blue-400">

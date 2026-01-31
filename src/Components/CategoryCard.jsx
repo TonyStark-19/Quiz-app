@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 // category card
 export default function CategoryCard({ item, delay }) {
     const navigate = useNavigate();
-    const slug = item.title.toLowerCase().replace(/[^a-z0-9]/g, "");
 
     return (
         <div
@@ -39,7 +38,7 @@ export default function CategoryCard({ item, delay }) {
                 </div>
 
                 <button
-                    onClick={() => navigate(`/quiz/${slug}`)}
+                    onClick={() => navigate(`/quiz/${item.slug}`)}
                     className="w-full py-3 rounded-xl font-bold text-sm transition-all
                                bg-stone-900 dark:bg-white text-white dark:text-black
                                hover:bg-amber-600 dark:hover:bg-indigo-500 dark:hover:text-white"
