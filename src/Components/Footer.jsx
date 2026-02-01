@@ -24,7 +24,7 @@ export function Footer() {
                         href="https://github.com/TonyStark-19"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-stone-900 dark:text-white font-bold hover:text-amber-600 dark:hover:text-indigo-400 transition-colors"
+                        className="text-stone-900 dark:text-white hover:text-amber-600 dark:hover:text-indigo-400 transition-colors text-sm font-bold"
                     >
                         Aditya Chandel
                     </a>

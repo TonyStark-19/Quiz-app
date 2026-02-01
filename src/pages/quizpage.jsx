@@ -96,7 +96,7 @@ function Quiz({ showResult, setShowResult }) {
 
     return (
         <div className="w-full max-w-3xl" data-aos="fade-up">
-            <div className="mb-6 mt-8 space-y-3">
+            <div className="mb-6 mt-8 space-y-3 max-[500px]:mt-12 max-[500px]:mx-3">
                 <div className="flex justify-between items-end">
                     <div>
                         <h2 className="text-[10px] uppercase tracking-widest font-bold text-stone-500 dark:text-gray-500">
@@ -150,7 +150,7 @@ function Quiz({ showResult, setShowResult }) {
                     disabled={selectedOption === null}
                     className="mt-8 w-full py-3 rounded-2xl font-black text-lg uppercase tracking-widest transition-all
                         bg-stone-900 dark:bg-white text-white dark:text-black
-                        hover:scale-[1.01] active:scale-95 disabled:opacity-30 disabled:hover:scale-100 shadow-lg"
+                        hover:scale-[1.01] active:scale-95 disabled:opacity-30 disabled:hover:scale-100 shadow-lg max-[500px]:text-sm"
                 >
                     {current === questions.length - 1 ? "Finish Quiz" : "Next Question"}
                 </button>

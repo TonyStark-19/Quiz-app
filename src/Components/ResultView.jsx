@@ -10,7 +10,7 @@ export default function ResultView({ score, total, answers, showReview, setShowR
         <div className="w-full max-w-4xl animate-in fade-in zoom-in duration-500">
             {!showReview ? (
                 <div className="text-center space-y-8 py-10">
-                    <div className="relative inline-block">
+                    <div className="relative inline-block max-[500px]:mt-5">
                         <div className="text-[8rem] md:text-[10rem] font-black text-stone-100 dark:text-gray-900 leading-none">
                             {Math.round(percentage)}%
                         </div>
@@ -40,9 +40,9 @@ export default function ResultView({ score, total, answers, showReview, setShowR
                     </div>
                 </div>
             ) : (
-                <div className="space-y-6">
-                    <div className="flex justify-between items-center my-10">
-                        <h2 className="text-3xl font-black text-stone-900 dark:text-white">Review</h2>
+                <div className="space-y-6 max-[500px]:mt-5">
+                    <div className="flex justify-between items-center my-10 max-[500px]:mx-3">
+                        <h2 className="text-3xl font-black text-stone-900 dark:text-white max-[500px]:text-lg">Review</h2>
                         <button onClick={() => setShowReview(false)} className="text-amber-600 dark:text-indigo-400 font-bold">Back to Summary</button>
                     </div>
                     <div className="grid gap-4">
@@ -51,7 +51,8 @@ export default function ResultView({ score, total, answers, showReview, setShowR
                                 <p className="font-bold text-stone-900 dark:text-white mb-4">Q{i + 1}. {ans.question}</p>
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     <div className={`p-3 rounded-xl border
-                                        ${ans.isCorrect ? 'bg-green-50 border-green-200 text-green-700 dark:bg-green-900/20 dark:border-green-800 dark:text-green-400'
+                                        ${ans.isCorrect ?
+                                            'bg-green-50 border-green-200 text-green-700 dark:bg-green-900/20 dark:border-green-800 dark:text-green-400'
                                             : 'bg-red-50 border-red-200 text-red-700 dark:bg-red-900/20 dark:border-red-800 dark:text-red-400'}`}>
                                         <span className="text-[10px] uppercase font-black block mb-1">Your Answer</span>
                                         {ans.selected}

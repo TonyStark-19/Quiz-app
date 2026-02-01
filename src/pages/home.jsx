@@ -16,6 +16,9 @@ import 'aos/dist/aos.css';
 // import quiz data
 import { quizData } from './quizdata';
 
+// import icons
+import { FaGithub } from "react-icons/fa";
+
 // home page
 export default function Home() {
 
@@ -59,13 +62,14 @@ function Hero() {
     const totalQuestions = Object.values(quizData).reduce((acc, curr) => acc + curr.length, 0);
 
     return (
-        <section className="container mx-auto px-6 py-20 flex flex-col items-center justify-center min-h-[calc(100vh-80px)]">
+        <section className="min-[500px]:container min-[500px]:mx-auto px-6 py-20 flex flex-col items-center justify-center min-h-[calc(100vh-80px)]
+        max-[500px]:flex max-[500px]:justify-center max-[500px]:items-center max-[500px]:w-full">
             <div className="max-w-4xl w-full text-center space-y-8">
 
                 {/* Badge */}
                 <div data-aos="fade-down" className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-200 bg-amber-50
-                dark:bg-indigo-950/30 dark:border-indigo-800 text-amber-700 dark:text-indigo-300 text-sm font-medium">
-                    <span className="relative flex h-2 w-2">
+                dark:bg-indigo-950/30 dark:border-indigo-800 text-amber-700 dark:text-indigo-300 text-sm font-medium max-[500px]:py-2">
+                    <span className="relative flex h-2 w-2 max-[500px]:hidden">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
                     </span>
@@ -89,13 +93,13 @@ function Hero() {
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+                <div className="flex flex-col max-sm:w-full sm:flex-row gap-4 justify-center items-center pt-4"
                     data-aos="fade-up" data-aos-delay="300">
 
                     {/* Primary CTA */}
-                    <Link to="/pages/category">
+                    <Link to="/pages/category" className='max-sm:w-full'>
                         <button className="group relative px-8 py-4 bg-stone-900 dark:bg-white text-white dark:text-black font-bold rounded-2xl
-                        overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl shadow-stone-200 dark:shadow-none">
+                        overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl shadow-stone-200 dark:shadow-none max-sm:w-full">
                             <span className="relative z-10">Get Started</span>
                             <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-500 opacity-0 group-hover:opacity-100
                             transition-opacity duration-300" />
@@ -103,13 +107,17 @@ function Hero() {
                     </Link>
 
                     {/* Secondary CTA */}
-                    <button
-                        onClick={() => window.location.href = 'mailto:your-email@example.com?subject=Quiz Category Suggestion'}
+                    <a
+                        href="https://github.com/TonyStark-19/Quiz-app"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-8 py-4 bg-white dark:bg-transparent border-2 border-stone-200 dark:border-gray-800 text-stone-700
-                        dark:text-gray-300 font-bold rounded-2xl hover:bg-stone-50 dark:hover:bg-gray-900 transition-all flex items-center gap-2"
+                        dark:text-gray-300 font-bold rounded-2xl hover:bg-stone-50 dark:hover:bg-gray-900 transition-all flex items-center
+                        justify-center gap-2 max-sm:w-full"
                     >
-                        Suggest Categories
-                    </button>
+                        <FaGithub className="text-xl" />
+                        Star on GitHub
+                    </a>
                 </div>
 
                 {/* Floating Stats/Features */}
