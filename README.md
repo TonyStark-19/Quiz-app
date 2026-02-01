@@ -1,4 +1,4 @@
-# 🧠 React Quiz App
+# 🧠 Quizify — Interview-Focused React Quiz Platform
 
 ![Repo Size](https://img.shields.io/github/repo-size/TonyStark-19/Quiz-app?color=yellow)
 ![Stars](https://img.shields.io/github/stars/TonyStark-19/Quiz-app?color=blue)
@@ -11,7 +11,7 @@
 ![AOS](https://img.shields.io/badge/Library-AOS-blueviolet)
 ![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)
 
-Welcome to the React **Quiz App**, a dynamic and **responsive** quiz platform built using **React** and **Tailwind CSS**. It allows users to test their knowledge across multiple categories with smooth transitions, score tracking, and now — a review section to check correct and incorrect answers after completing the quiz.
+Welcome to the React **Quiz App**, a dynamic and **responsive interview-preparation** quiz platform built using **React** and **Tailwind CSS**. It allows users to test their knowledge across multiple categories with smooth transitions, score tracking, and now — a review section to check correct and incorrect answers after completing the quiz.
 
 The project ensures a great user experience, supporting both light and dark themes along with automatic scroll-to-top on every route change or navigation.
 
@@ -36,6 +36,8 @@ Your quiz app currently supports the following topics:
 ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
 
+---
+
 ### Programming Languages
 
 - 🟦 C
@@ -43,6 +45,8 @@ Your quiz app currently supports the following topics:
 - 🟧 Java
 - 🟩 Python
 - 🟨 JavaScript
+
+---
 
 ### Web Development
 
@@ -52,6 +56,8 @@ Your quiz app currently supports the following topics:
 - 🟦 Tailwind CSS
 - ⚙️ Node.js
 - 🚏 Express.js
+
+---
 
 ### DevOps & Tools
 
@@ -64,15 +70,15 @@ Your quiz app currently supports the following topics:
 
 | 🏠 Home Page Dark  | 🏠 Home Page Light |
 |------------|------------|
-| ![Screenshot 1](/public/images/image1.png) | ![Screenshot 2](/public/images/image2.png) |
+| ![Screenshot 1](/public/images/Screenshots/image1.png) | ![Screenshot 2](/public/images/Screenshots/image2.png) |
 
 | 🏷️ Category Page Dark | 🏷️ Category Page Light |
 |------------|------------|
-| ![Screenshot 3](/public/images/image3.png) | ![Screenshot 4](/public/images/image4.png) |
+| ![Screenshot 3](/public/images/Screenshots/image3.png) | ![Screenshot 4](/public/images/Screenshots/image4.png) |
 
 | ❓ Quiz Page Dark | ❓ Quiz Page Light |
 |------------|------------|
-| ![Screenshot 3](/public/images/image5.png) | ![Screenshot 4](/public/images/image6.png) |
+| ![Screenshot 3](/public/images/Screenshots/image5.png) | ![Screenshot 4](/public/images/Screenshots/image6.png) |
 
 ---
 
@@ -84,16 +90,18 @@ The project is live and can be viewed here: [Quiz-app](https://quiz-app-drab-bet
 
 ## ✨ Features
 
-- 🔄 **Dynamic Routing** with `react-router-dom`
-- 🌙 **Dark Mode** toggle with local storage persistence
-- 🎨 **Smooth animations** using AOS (Animate On Scroll)
-- 🧩 **Multiple quiz categories** with structured data
-- 📊 **Score tracking** and conditional result feedback
-- 🧠 **Review Answers** — view your correct and incorrect answers after completing the quiz
-- 🧾 **Detailed results summary** with retry and take-more-quiz options
-- ⬆️ **Scroll to Top** — automatically scrolls to top on every route change or when navigating back
-- 💡 **User-friendly** and accessible interface
-- ✅ **Navbar disabling** during quiz to avoid accidental exits
+| Feature                | Description                          |
+| ---------------------- | ------------------------------------ |
+| 🔄 Dynamic Routing     | Built with `react-router-dom`        |
+| 🌙 Dark Mode           | Persistent theme using localStorage  |
+| 🎨 Smooth Animations   | Powered by AOS (Animate On Scroll)   |
+| 🧩 Multiple Categories | Structured quiz data by topic        |
+| 📊 Score System        | Instant result calculation           |
+| 🧠 Answer Review       | Review all answers after completion  |
+| 🔁 Retry Option        | Retake quizzes instantly             |
+| ⬆️ Scroll Restoration  | Scrolls to top on every route change |
+| 🔒 Quiz Protection     | Navbar disabled during quiz session  |
+| 📱 Responsive Design   | Works across all devices             |
 
 ---
 
@@ -127,6 +135,15 @@ npm start
 ## 🙌 Contribution
 
 Contributions are welcome! If you'd like to improve the quiz experience or fix bugs, feel free to fork the repo and submit a PR.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+Feel free to use, modify, and share it – just give proper credit.
+
+Check the [LICENSE](LICENSE) file for more details.
 
 ---
 
