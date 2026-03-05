@@ -19,20 +19,28 @@ The project ensures a great user experience, supporting both light and dark them
 
 ## 📚 Quiz Available For:
 
-Your quiz app currently supports the following topics:
+This quiz app currently supports the following topics:
 
 ![C](https://img.shields.io/badge/C-00599C?logo=c&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-044F88?logo=c%2B%2B&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-007396?logo=oracle&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+
+![OOP](https://img.shields.io/badge/OOP-Concepts-blue)
+
 ![HTML](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white)
 ![ReactJS](https://img.shields.io/badge/ReactJS-61DAFB?logo=react&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-38B2AC?logo=tailwindcss&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
+
 ![NodeJS](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
 ![ExpressJS](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white)
+
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?logo=mysql&logoColor=white)
+
 ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
 
@@ -45,6 +53,7 @@ Your quiz app currently supports the following topics:
 - 🟧 Java
 - 🟩 Python
 - 🟨 JavaScript
+- 🧩 OOP (Object-Oriented Programming)
 
 ---
 
@@ -54,8 +63,16 @@ Your quiz app currently supports the following topics:
 - 🌐 HTML
 - 🎨 CSS
 - 🟦 Tailwind CSS
+- 🅱️ Bootstrap
 - ⚙️ Node.js
 - 🚏 Express.js
+
+---
+
+### Databases
+
+- 🍃 MongoDB
+- 🗄️ SQL
 
 ---
 
@@ -63,7 +80,6 @@ Your quiz app currently supports the following topics:
 
 - 🗂️ Git
 - 🐙 GitHub
-
 ---
 
 ## 📸 Screenshots
@@ -107,10 +123,12 @@ The project is live and can be viewed here: [Quiz-app](https://quiz-app-drab-bet
 
 ## 🧰 Tech Stack
 
-- **React** (with functional components & hooks)
-- **Tailwind CSS** (for modern and responsive UI)
-- **React Router DOM** (for routing)
-- **AOS (Animate On Scroll)** for animations
+| Technology | Purpose |
+|------------|---------|
+| React (Functional Components & Hooks) | Building the UI with reusable components and modern React patterns |
+| Tailwind CSS | Creating a modern, responsive, and utility-first design |
+| React Router DOM | Handling client-side routing and navigation |
+| AOS (Animate On Scroll) | Adding smooth scroll-based animations |
 
 ---
 
