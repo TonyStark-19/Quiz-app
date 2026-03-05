@@ -9,7 +9,7 @@ export default function ScrollToTop() {
     useEffect(() => {
         // Scroll to top whenever route changes
         window.scrollTo({ top: 0, behavior: "instant" });
-    }, [location.key]); // 👈 use `location.key` instead of `pathname`
+    }, [location.key]);
 
     useEffect(() => {
         // Handle browser back/forward navigation explicitly

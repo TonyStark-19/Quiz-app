@@ -40,7 +40,6 @@ body {
 
 .dark ::-webkit-scrollbar-thumb {
     background: #1f2937;
-    /* gray-800 */
     border-radius: 20px;
     border: 2px solid #030712;
 }
